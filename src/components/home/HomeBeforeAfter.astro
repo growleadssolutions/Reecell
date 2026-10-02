@@ -1,0 +1,35 @@
+﻿---
+import Container from '../ui/Container.astro';
+import WhatsAppCTA from '../conversion/WhatsAppCTA.astro';
+const comparisons = [
+  { before: 'Trocar peças antes de identificar a verdadeira causa da falha.', after: 'Diagnóstico técnico primeiro, para entender a origem do problema antes de partir para o reparo.' },
+  { before: 'Descobrir novos problemas só depois que o serviço já começou.', after: 'O aparelho é analisado para identificar falhas relacionadas e possíveis causas, reduzindo retrabalho.' },
+  { before: 'Aparelho parado por dias sem uma definição clara.', after: 'Agilidade na análise e execução, buscando reduzir o tempo entre diagnóstico, aprovação e entrega.' },
+];
+---
+<section class="section home-before-after" aria-labelledby="before-after-title">
+  <Container>
+    <div class="comparison-layout">
+      <div class="comparison-intro">
+        <p class="eyebrow">Por que escolher a ReeCell</p>
+        <h2 id="before-after-title">Diagnóstico certo para não perder tempo com tentativa e erro.</h2>
+        <p class="home-support">Um reparo rápido começa por identificar corretamente a causa do problema. A ReeCell combina análise técnica, experiência em diagnóstico e agilidade no reparo para reduzir o tempo que você fica sem o aparelho.</p>
+      </div>
+      <div class="repair-comparison" role="table" aria-label="O que costuma atrasar um reparo e como a ReeCell trabalha">
+        <div class="comparison-head" role="row">
+          <div role="columnheader">O que costuma atrasar um reparo</div>
+          <div role="columnheader">Como a ReeCell trabalha</div>
+        </div>
+        {comparisons.map(item => (
+          <div class="comparison-row" role="row">
+            <div class="comparison-before" role="cell"><span class="compare-marker" aria-hidden="true">×</span><p><span class="comparison-mobile-label" aria-hidden="true">O que costuma atrasar um reparo</span>{item.before}</p></div>
+            <div class="comparison-after" role="cell"><span class="compare-marker" aria-hidden="true">✓</span><p><span class="comparison-mobile-label" aria-hidden="true">Como a ReeCell trabalha</span>{item.after}</p></div>
+          </div>
+        ))}
+      </div>
+    </div>
+    <div class="comparison-cta">
+      <WhatsAppCTA label="Quero diagnosticar meu aparelho" message="Olá! Quero diagnosticar meu aparelho. O modelo é: " location="before-after" />
+    </div>
+  </Container>
+</section>

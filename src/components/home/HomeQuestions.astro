@@ -1,0 +1,8 @@
+---
+import Container from '../ui/Container.astro';
+import { homeQuestions } from '../../data/home';
+---
+<section class="section home-questions" aria-labelledby="questions-title"><Container class="home-split">
+  <div><p class="eyebrow">Antes do atendimento</p><h2 id="questions-title">Dúvidas que vale resolver antes de vir.</h2><p class="home-support">Modelo, peças e avaliação influenciam o atendimento. Confira o que você pode alinhar com a equipe.</p></div>
+  <div class="question-list">{homeQuestions.map(item => <details><summary>{item.question}</summary><p>{item.answer}</p></details>)}</div>
+</Container></section>

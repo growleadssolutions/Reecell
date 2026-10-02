@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Container from '../components/ui/Container.astro';
+import WhatsAppCTA from '../components/conversion/WhatsAppCTA.astro';
+import Breadcrumbs from '../components/seo/Breadcrumbs.astro';
+import { servicePages } from '../data/service-pages';
+import { absoluteURL, breadcrumbNode } from '../lib/structured-data';
+import '../styles/home.css';
+import '../styles/service-pages.css';
+import HomeMethod from '../components/home/HomeMethod.astro';
+import HomeLocation from '../components/home/HomeLocation.astro';
+import StorefrontPhoto from '../components/conversion/StorefrontPhoto.astro';
+import HomeFinalCTA from '../components/home/HomeFinalCTA.astro';
+const path = '/contato-reecell-bombinhas/';
+const crumbs = [{ name: 'Início', href: '/' }, { name: 'Contato', href: path }];
+---
+<BaseLayout title="Contato ReeCell Bombinhas | Assistência Técnica" description="Fale com a ReeCell em Bombinhas pelo WhatsApp ou telefone. Consulte orçamento, disponibilidade de atendimento e como chegar à loja em Bombas." canonical={path} structuredData={[breadcrumbNode(crumbs, absoluteURL(path))]}>
+  <div class="home-page detail-page">
+  <section class="svc-hero detail-hero"><Container><Breadcrumbs items={crumbs} /><div class="detail-hero-grid"><div><p class="eyebrow">Contato ReeCell · Bombinhas</p><h1>Vamos cuidar do seu próximo passo.</h1><p class="lead">Precisa de ajuda com o celular? Fale com a ReeCell para consultar um reparo, tirar dúvidas e combinar sua visita à loja.</p><WhatsAppCTA label="Conversar no WhatsApp" location="contact-hero" message="Olá! Gostaria de falar com a ReeCell sobre o atendimento em Bombinhas." /><p class="detail-note">Envie o modelo e conte o que aconteceu.</p></div><div class="contact-storefront"><StorefrontPhoto eager /></div></div></Container></section>
+  <section class="svc-section section"><Container><p class="eyebrow">Para facilitar a conversa</p><h2>O que enviar na primeira mensagem?</h2><div class="detail-cards"><article><span class="detail-number">01</span><h3>Marca e modelo</h3><p>Informe qual é o seu celular. Isso ajuda na consulta sobre o serviço e a disponibilidade de peças.</p></article><article><span class="detail-number">02</span><h3>O que aconteceu</h3><p>Descreva os sintomas e quando começaram. Conte se houve queda, contato com líquido ou falha no carregamento.</p></article><article><span class="detail-number">03</span><h3>Uma foto, se ajudar</h3><p>Se o problema for visível, uma foto da tela ou da parte danificada pode ajudar na orientação inicial.</p></article></div></Container></section>
+  <HomeMethod />
+<section class="svc-section section detail-band"><Container><div class="detail-split"><div><p class="eyebrow">Planeje sua visita</p><h2>Fale com a equipe antes de sair.</h2></div><div><p class="lead">Mora na região ou está passando alguns dias em Bombinhas? Envie o modelo e explique o problema para consultar a disponibilidade de atendimento e organizar sua ida à loja.</p><p>Se você tem uma data para voltar de viagem, informe isso na conversa. O prazo do reparo precisa ser confirmado conforme a avaliação e a disponibilidade de peças para o aparelho.</p><WhatsAppCTA label="Consultar atendimento para meu celular" location="contact-visit" message="Olá! Quero consultar a disponibilidade de atendimento. Meu celular é: " /></div></div></Container></section>
+<HomeLocation showMap={false} />
+  <section class="svc-section section"><Container><p class="eyebrow">Conheça os serviços</p><h2>Saiba mais sobre o reparo que você procura.</h2><div class="detail-cards">{servicePages.map(page => <article><h3><a href={`/${page.slug}/`}>{page.label} →</a></h3><p>{page.description}</p></article>)}</div></Container></section>
+<section class="svc-section section"><Container><div class="detail-split"><div><p class="eyebrow">Dúvidas sobre o atendimento</p><h2>Prepare sua conversa com a ReeCell.</h2><p class="lead">Combine os detalhes diretamente com a loja antes de levar o aparelho.</p></div><div class="detail-faq">
+<details><summary>Preciso agendar antes de ir?</summary><p>Consulte pelo WhatsApp a disponibilidade e a necessidade de combinar um horário para o seu atendimento.</p></details>
+<details><summary>Já consigo saber o valor por mensagem?</summary><p>Informe o modelo e os sintomas para começar a consulta. A confirmação do orçamento pode depender de uma avaliação presencial, especialmente quando a causa da falha não está clara.</p></details>
+<details><summary>O que preciso confirmar ao deixar o celular?</summary><p>Converse sobre as condições da avaliação, eventuais custos, o serviço proposto e a previsão de retorno. Confirme também como receber as atualizações sobre o aparelho.</p></details>
+<details><summary>Como consultar um aparelho que já está na loja?</summary><p>Use o mesmo contato do atendimento e informe os dados do serviço solicitados pela equipe. Assim, a loja pode localizar a sua solicitação e orientar os próximos passos.</p></details>
+</div></div></Container></section>
+<HomeFinalCTA showMap={true} />
+</div>
+</BaseLayout>

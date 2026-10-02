@@ -1,0 +1,31 @@
+---
+import Container from '../ui/Container.astro';
+import WhatsAppCTA from '../conversion/WhatsAppCTA.astro';
+import LocationMap from '../conversion/LocationMap.astro';
+interface Props { showMap?: boolean }
+const { showMap = false } = Astro.props;
+---
+{showMap ? (
+<section class="section home-map-closing" aria-labelledby="final-title"><Container>
+  <div class="home-map-grid">
+    <div><p class="eyebrow">Vamos conversar?</p><h2 id="final-title">Conte o que aconteceu com seu celular.</h2><p>Envie o modelo e os sintomas para consultar o atendimento em Bombinhas.</p><WhatsAppCTA label="Pedir orientação pelo WhatsApp" message="Olá! Meu celular está com um problema e gostaria de conversar com a ReeCell." location="final" /></div>
+    <div><LocationMap /></div>
+  </div>
+</Container></section>
+) : (
+<section class="section home-final" aria-labelledby="final-title"><Container>
+  <div><p class="eyebrow">Comece pelo WhatsApp</p><h2 id="final-title">Seu celular deu problema?<br />Conte para a ReeCell.</h2><p>Envie o modelo e explique o que aconteceu. Vamos começar por aí.</p></div>
+  <WhatsAppCTA label="Conversar sobre meu celular" message="Olá! Meu celular está com um problema e gostaria de conversar com a ReeCell." location="final" />
+</Container></section>
+)}
+<style>
+  .home-map-closing { background: var(--color-primary); color: white; }
+  .home-map-grid { display: grid; gap: clamp(2rem, 4vw, 4rem); align-items: center; }
+  .home-map-grid > div { min-width: 0; }
+  .home-map-closing h2 { max-width: 22ch; }
+  .home-map-closing .eyebrow { color: white; }
+  .home-map-closing :global(.button) { background: white; color: var(--color-primary); }
+  .home-map-closing :global(.button:hover) { background: var(--color-primary-soft); }
+  .home-map-closing :global(:focus-visible) { outline-color: white; }
+  @media (min-width: 56rem) { .home-map-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+</style>

@@ -1,0 +1,10 @@
+---
+import Button from '../ui/Button.astro';
+import { business } from '../../data/business';
+interface Props { label?: string; message?: string; location?: string; context?: string; variant?: 'primary' | 'secondary' | 'text'; class?: string }
+const { label = 'Pedir orçamento', message = 'Olá! Gostaria de pedir um orçamento para meu celular.', location, context, variant = 'primary', class: className } = Astro.props;
+const number = business.whatsapp.replace(/\D/g, '');
+if (!/^\d{10,15}$/.test(number)) throw new Error('Configure um WhatsApp válido em business.ts.');
+const href = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
+---
+<Button href={href} variant={variant} class={className} data-cta="whatsapp" data-cta-location={location} data-cta-context={context}>{label}</Button>

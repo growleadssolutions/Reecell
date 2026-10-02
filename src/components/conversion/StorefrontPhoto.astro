@@ -1,0 +1,11 @@
+---
+interface Props { eager?: boolean }
+const { eager = false } = Astro.props;
+---
+<figure class="storefront-photo">
+  <img src="/reecell-fachada.webp" alt="Fachada da ReeCell, com letreiro roxo e entrada da loja em Bombas, Bombinhas." width="680" height="382" loading={eager ? 'eager' : 'lazy'} decoding="async" />
+</figure>
+<style>
+  .storefront-photo { margin: 0; width: 100%; min-width: 0; }
+  .storefront-photo img { display: block; width: 100%; height: auto; object-fit: contain; border-radius: var(--radius-sm); }
+</style>

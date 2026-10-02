@@ -1,0 +1,8 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Container from '../components/ui/Container.astro';
+import Button from '../components/ui/Button.astro';
+---
+<BaseLayout title="Página não encontrada | ReeCell" description="O endereço solicitado não foi encontrado. Volte ao início para encontrar a ReeCell." canonical="/404/" robots="noindex, follow" includeStructuredData={false}>
+  <section class="section"><Container><p class="eyebrow">Erro 404</p><h1>Página não encontrada</h1><p>Confira o endereço ou volte à página inicial.</p><Button href="/">Voltar ao início</Button></Container></section>
+</BaseLayout>

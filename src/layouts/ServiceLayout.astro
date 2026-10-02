@@ -1,0 +1,52 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from './BaseLayout.astro';
+import Container from '../components/ui/Container.astro';
+import WhatsAppCTA from '../components/conversion/WhatsAppCTA.astro';
+import Breadcrumbs from '../components/seo/Breadcrumbs.astro';
+import { servicePages, type ServicePage } from '../data/service-pages';
+import { absoluteURL, breadcrumbNode, serviceNode } from '../lib/structured-data';
+import screen from '../assets/home/hero-troca-tela.webp';
+import battery from '../assets/home/hero-troca-bateria.webp';
+import phone from '../assets/home/hero-conserto-celular.webp';
+import '../styles/home.css';
+import '../styles/service-pages.css';
+import HomeMethod from '../components/home/HomeMethod.astro';
+import HomeLocation from '../components/home/HomeLocation.astro';
+import LocationMap from '../components/conversion/LocationMap.astro';
+import BatteryGuidance from '../components/conversion/BatteryGuidance.astro';
+import ScreenGuidance from '../components/conversion/ScreenGuidance.astro';
+import ScreenBudget from '../components/conversion/ScreenBudget.astro';
+import RepairGuidance from '../components/conversion/RepairGuidance.astro';
+import RepairBudget from '../components/conversion/RepairBudget.astro';
+import { serviceGuidance } from '../data/service-guidance';
+interface Props { page: ServicePage }
+const { page } = Astro.props;
+const guide = serviceGuidance[page.image as keyof typeof serviceGuidance];
+const questions = [...page.questions, ...guide.questions];
+const path = `/${page.slug}/`;
+const crumbs = [{ name: 'Início', href: '/' }, { name: page.label, href: path }];
+const images = { screen, battery, phone };
+const bareHeroImage = page.image === 'phone' || page.image === 'screen';
+const message = `Olá! Gostaria de consultar ${page.label.toLowerCase()}. Meu modelo é: `;
+---
+<BaseLayout title={`${page.title} | ReeCell`} description={page.description} canonical={path} structuredData={[breadcrumbNode(crumbs, absoluteURL(path)), serviceNode(page.title, path, page.description)]}>
+  <div class="home-page detail-page">
+  <section class="svc-hero detail-hero"><Container>
+    <Breadcrumbs items={crumbs} />
+    <div class="detail-hero-grid"><div>
+      <p class="eyebrow">ReeCell · Bombas, Bombinhas</p><h1>{page.title}</h1><p class="lead">{page.intro}</p>
+      <WhatsAppCTA label="Consultar pelo WhatsApp" message={message} location="service-hero" context={page.slug} />
+      <p class="detail-note">Informe o modelo do aparelho para começar.</p>
+    </div><div class:list={['detail-art', { 'detail-art--bare': bareHeroImage, 'detail-art--enlarged': bareHeroImage, 'detail-art--photo': page.image === 'battery' }]}><Image src={images[page.image as keyof typeof images]} alt={page.image === 'screen' ? 'Ilustração de celular com tela quebrada' : page.image === 'battery' ? 'Reparo de celular aberto na bancada da ReeCell, com técnico usando luvas e ferramentas.' : 'Ilustração de celular para diagnóstico'} widths={page.image === 'battery' ? [320, 560, 840] : [400, 700, 1100]} quality={82} sizes={page.image === 'battery' ? '(min-width: 64rem) 40vw, 250px' : '(min-width: 64rem) 40vw, 90vw'} format="webp" loading="eager" decoding="async" /></div></div>
+  </Container></section>
+  <section class="svc-section section"><Container><p class="eyebrow">Reconheça os sinais</p><h2>{page.heading}</h2><div class="detail-cards">{page.symptoms.map(([title, text], index) => <article><span class="detail-number">0{index + 1}</span><h3>{title}</h3><p>{text}</p></article>)}</div></Container></section>
+  {page.image === 'battery' ? <BatteryGuidance /> : page.image === 'screen' ? <ScreenGuidance /> : <RepairGuidance />}
+<HomeMethod />
+  <section class="svc-section section detail-band"><Container><div class="detail-split"><h2>{page.detailTitle}</h2><div><p class="lead">{page.detail}</p><a href="/contato-reecell-bombinhas/">Veja como falar com a loja e chegar até a ReeCell →</a></div></div></Container></section>
+  {page.image === 'screen' ? <ScreenBudget /> : page.image === 'phone' ? <RepairBudget /> : <section class="svc-section section"><Container><div class="detail-split"><div><p class="eyebrow">Seu orçamento começa aqui</p><h2>Uma boa descrição facilita o próximo passo.</h2><p class="lead">O valor e o prazo dependem do modelo, da avaliação e da disponibilidade da peça. Comece enviando estas informações:</p></div><div class="detail-checklist"><ol>{guide.prepare.map(item => <li>{item}</li>)}</ol><p>Antes de autorizar, confirme o serviço proposto, o valor total, o prazo e as condições de garantia diretamente com a equipe.</p><WhatsAppCTA label="Enviar informações do aparelho" message={message} location="service-budget" context={page.slug} /></div></div></Container></section>}
+  <section class="svc-section section detail-closing"><Container class="detail-closing-grid"><div><p class="eyebrow">Vamos conversar?</p><h2>Conte o que aconteceu com seu celular.</h2><p>Envie o modelo e os sintomas para consultar o atendimento em Bombinhas.</p><WhatsAppCTA label="Pedir orientação pelo WhatsApp" message={message} location="service-final" context={page.slug} /><nav class="detail-related" aria-label="Outros serviços">{servicePages.filter(other => other.slug !== page.slug).map(other => <a href={`/${other.slug}/`}>{other.label} →</a>)}</nav></div><div class="detail-closing-map"><LocationMap /></div></Container></section>
+  <section class="svc-section section"><Container><div class="detail-split"><div><p class="eyebrow">Antes de levar o celular</p><h2>Tire suas dúvidas.</h2></div><div class="detail-faq">{questions.map(([question, answer]) => <details><summary>{question}</summary><p>{answer}</p></details>)}</div></div></Container></section>
+<HomeLocation showMap={false} />
+</div>
+</BaseLayout>

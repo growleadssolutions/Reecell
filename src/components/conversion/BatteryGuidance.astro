@@ -1,0 +1,27 @@
+---
+import Container from '../ui/Container.astro';
+import WhatsAppCTA from './WhatsAppCTA.astro';
+const points = [
+  ['Avaliação', 'Entender se a troca é indicada.', 'Conte como a autonomia mudou. A avaliação ajuda a verificar se o problema está na bateria ou se é necessário investigar outra causa.'],
+  ['Peça para o seu modelo', 'Consultar a bateria compatível.', 'Informe o modelo completo do celular para consultar a peça disponível e as condições do serviço.'],
+  ['Orçamento e prazo', 'Saber os detalhes antes de decidir.', 'Confirme o valor total, a previsão do reparo e as condições de garantia com a equipe antes de autorizar a troca.'],
+];
+---
+<section class="svc-section section home-location battery-guidance" aria-labelledby="battery-guidance-title">
+  <Container class="location-layout">
+    <div class="location-intro">
+      <p class="eyebrow">Antes de trocar a bateria</p>
+      <h2 id="battery-guidance-title">A troca começa com uma avaliação.</h2>
+      <p class="location-support">Seu celular precisa de mais autonomia? Converse com a ReeCell para entender a indicação da troca e consultar o serviço para o seu modelo.</p>
+      <div class="location-actions">
+        <WhatsAppCTA label="Consultar a troca de bateria" message="Olá! Quero consultar a troca de bateria. O modelo do meu celular é: " location="service-guidance" context="troca-de-bateria-de-celular-em-bombinhas" class="location-cta" />
+      </div>
+    </div>
+    <div class="location-details">
+      {points.map(([label, title, text], index) => <div class="location-entry">
+        <span class="location-number" aria-hidden="true">0{index + 1}</span>
+        <div><p class="location-label">{label}</p><h3>{title}</h3><p class="location-contact-note">{text}</p></div>
+      </div>)}
+    </div>
+  </Container>
+</section>

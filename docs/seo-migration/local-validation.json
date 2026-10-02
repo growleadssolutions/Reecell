@@ -1,0 +1,463 @@
+{
+  "checkedAt": "2026-10-01T22:20:03.010Z",
+  "layer": "static-build-and-routing-contract",
+  "notDeploymentProof": true,
+  "results": [
+    {
+      "oldPath": "/",
+      "finalPath": "/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/2026/06/08/celular-caiu-na-agua-o-que-fazer/",
+      "finalPath": "/2026/06/08/celular-caiu-na-agua-o-que-fazer/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/2026/06/08/celular-desligando-sozinho-bateria-sistema-placa/",
+      "finalPath": "/2026/06/08/celular-desligando-sozinho-bateria-sistema-placa/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/2026/06/08/celular-nao-liga-principais-causas/",
+      "finalPath": "/2026/06/08/celular-nao-liga-principais-causas/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/2026/06/08/conector-de-carga-com-defeito-sinais/",
+      "finalPath": "/2026/06/08/conector-de-carga-com-defeito-sinais/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/2026/06/08/iphone-nao-carrega-causas-solucoes/",
+      "finalPath": "/2026/06/08/iphone-nao-carrega-causas-solucoes/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/2026/06/08/onde-consertar-celular-em-bombinhas-com-seguranca/",
+      "finalPath": "/2026/06/08/onde-consertar-celular-em-bombinhas-com-seguranca/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/2026/06/08/samsung-com-tela-verde-o-que-pode-ser/",
+      "finalPath": "/2026/06/08/samsung-com-tela-verde-o-que-pode-ser/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/2026/06/08/tela-de-celular-bombinhas/",
+      "finalPath": "/2026/06/08/tela-de-celular-bombinhas/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/2026/06/08/tela-trincada-do-celular-posso-continuar-usando-ou-devo-trocar/",
+      "finalPath": "/2026/06/08/tela-trincada-do-celular-posso-continuar-usando-ou-devo-trocar/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/2026/06/08/troca-de-bateria-de-celular-sinais/",
+      "finalPath": "/2026/06/08/troca-de-bateria-de-celular-sinais/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/2026/06/15/celular-carregando-lentamente/",
+      "finalPath": "/2026/06/15/celular-carregando-lentamente/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/2026/06/15/celular-molhou-na-praia/",
+      "finalPath": "/2026/06/15/celular-molhou-na-praia/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/2026/06/15/iphone-com-tela-quebrada-em-bombinhas/",
+      "finalPath": "/2026/06/15/iphone-com-tela-quebrada-em-bombinhas/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/2026/06/16/alto-falante-ou-microfone-do-celular-nao-funciona/",
+      "finalPath": "/2026/06/16/alto-falante-ou-microfone-do-celular-nao-funciona/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/2026/06/16/assistencia-tecnica-celular-bombinhas/",
+      "finalPath": "/2026/06/16/assistencia-tecnica-celular-bombinhas/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/2026/06/16/assistencia-tecnica-de-celular-confiavel-em-bombinhas/",
+      "finalPath": "/2026/06/16/assistencia-tecnica-de-celular-confiavel-em-bombinhas/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/2026/06/16/assistencia-tecnica-para-celular-em-bombinhas-quando-procurar/",
+      "finalPath": "/2026/06/16/assistencia-tecnica-para-celular-em-bombinhas-quando-procurar/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/2026/06/16/botao-power-ou-volume-parou-de-funcionar/",
+      "finalPath": "/2026/06/16/botao-power-ou-volume-parou-de-funcionar/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/2026/06/16/camera-do-celular-embacada-ou-tremendo/",
+      "finalPath": "/2026/06/16/camera-do-celular-embacada-ou-tremendo/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/2026/06/16/celular-esquentando-muito/",
+      "finalPath": "/2026/06/16/celular-esquentando-muito/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/2026/06/16/como-proteger-seu-celular-em-bombinhas/",
+      "finalPath": "/2026/06/16/como-proteger-seu-celular-em-bombinhas/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/2026/08/04/melhores-assistencias-tecnicas-de-celular-em-bombinhas/",
+      "finalPath": "/2026/08/04/melhores-assistencias-tecnicas-de-celular-em-bombinhas/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/2026/08/04/melhores-lojas-de-celulares-em-bombinhas/",
+      "finalPath": "/2026/08/04/melhores-lojas-de-celulares-em-bombinhas/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/author-sitemap.xml",
+      "finalPath": "/sitemap.xml",
+      "treatment": "301",
+      "result": "Regra 301 direta e destino existente OK; HTTP da hospedagem pendente"
+    },
+    {
+      "oldPath": "/author/gabriel-souza/",
+      "finalPath": "/author/gabriel-souza/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/author/gabriel-souza/page/2/",
+      "finalPath": "/author/gabriel-souza/page/2/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/author/gabriel-souza/page/3/",
+      "finalPath": "/author/gabriel-souza/page/3/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/blog/",
+      "finalPath": "/blog/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/category-sitemap.xml",
+      "finalPath": "/sitemap.xml",
+      "treatment": "301",
+      "result": "Regra 301 direta e destino existente OK; HTTP da hospedagem pendente"
+    },
+    {
+      "oldPath": "/category/uncategorized/",
+      "finalPath": "/category/uncategorized/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/category/uncategorized/assistencia-tecnica/",
+      "finalPath": "/category/uncategorized/assistencia-tecnica/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/category/uncategorized/page/2/",
+      "finalPath": "/category/uncategorized/page/2/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/category/uncategorized/page/3/",
+      "finalPath": "/category/uncategorized/page/3/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/conserto-de-celular-em-bombinhas/",
+      "finalPath": "/conserto-de-celular-em-bombinhas/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/contato-reecell-bombinhas/",
+      "finalPath": "/contato-reecell-bombinhas/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/home-v3/",
+      "finalPath": "/",
+      "treatment": "301",
+      "result": "Regra 301 direta e destino existente OK; HTTP da hospedagem pendente"
+    },
+    {
+      "oldPath": "/page-sitemap.xml",
+      "finalPath": "/sitemap.xml",
+      "treatment": "301",
+      "result": "Regra 301 direta e destino existente OK; HTTP da hospedagem pendente"
+    },
+    {
+      "oldPath": "/post_tag-sitemap.xml",
+      "finalPath": "/sitemap.xml",
+      "treatment": "301",
+      "result": "Regra 301 direta e destino existente OK; HTTP da hospedagem pendente"
+    },
+    {
+      "oldPath": "/post-sitemap.xml",
+      "finalPath": "/sitemap.xml",
+      "treatment": "301",
+      "result": "Regra 301 direta e destino existente OK; HTTP da hospedagem pendente"
+    },
+    {
+      "oldPath": "/sitemap_index.xml",
+      "finalPath": "/sitemap.xml",
+      "treatment": "301",
+      "result": "Regra 301 direta e destino existente OK; HTTP da hospedagem pendente"
+    },
+    {
+      "oldPath": "/tag/assistencia-tecnica-bombinhas/",
+      "finalPath": "/tag/assistencia-tecnica-bombinhas/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/tag/assistencia-tecnica-iphone/",
+      "finalPath": "/tag/assistencia-tecnica-iphone/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/tag/assistencia-tecnica-samsung/",
+      "finalPath": "/tag/assistencia-tecnica-samsung/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/tag/bateria-de-celular/",
+      "finalPath": "/tag/bateria-de-celular/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/tag/bateria-estufada/",
+      "finalPath": "/tag/bateria-estufada/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/tag/bombinhas/",
+      "finalPath": "/tag/bombinhas/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/tag/celular-descarregando-rapido/",
+      "finalPath": "/tag/celular-descarregando-rapido/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/tag/celular-desligando-sozinho/",
+      "finalPath": "/2026/06/08/celular-desligando-sozinho-bateria-sistema-placa/",
+      "treatment": "301",
+      "result": "Regra 301 direta e destino existente OK; HTTP da hospedagem pendente"
+    },
+    {
+      "oldPath": "/tag/celular-molhado/",
+      "finalPath": "/tag/celular-molhado/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/tag/celular-nao-carrega/",
+      "finalPath": "/tag/celular-nao-carrega/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/tag/celular-nao-liga/",
+      "finalPath": "/2026/06/08/celular-nao-liga-principais-causas/",
+      "treatment": "301",
+      "result": "Regra 301 direta e destino existente OK; HTTP da hospedagem pendente"
+    },
+    {
+      "oldPath": "/tag/celular-tela-preta/",
+      "finalPath": "/tag/celular-tela-preta/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/tag/conector-de-carga-com-defeito/",
+      "finalPath": "/2026/06/08/conector-de-carga-com-defeito-sinais/",
+      "treatment": "301",
+      "result": "Regra 301 direta e destino existente OK; HTTP da hospedagem pendente"
+    },
+    {
+      "oldPath": "/tag/conector-de-carga/",
+      "finalPath": "/tag/conector-de-carga/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/tag/consertar-celular-em-bombinhas/",
+      "finalPath": "/tag/consertar-celular-em-bombinhas/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/tag/conserto-de-celular/",
+      "finalPath": "/tag/conserto-de-celular/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/tag/conserto-de-tela/",
+      "finalPath": "/tag/conserto-de-tela/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/tag/diagnostico-celular/",
+      "finalPath": "/tag/diagnostico-celular/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/tag/iphone-bombinhas/",
+      "finalPath": "/tag/iphone-bombinhas/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/tag/iphone-nao-carrega/",
+      "finalPath": "/2026/06/08/iphone-nao-carrega-causas-solucoes/",
+      "treatment": "301",
+      "result": "Regra 301 direta e destino existente OK; HTTP da hospedagem pendente"
+    },
+    {
+      "oldPath": "/tag/limpeza-de-conector/",
+      "finalPath": "/tag/limpeza-de-conector/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/tag/manutencao-de-celular/",
+      "finalPath": "/tag/manutencao-de-celular/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/tag/problema-na-placa/",
+      "finalPath": "/tag/problema-na-placa/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/tag/reecell/",
+      "finalPath": "/tag/reecell/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/tag/samsung-com-tela-verde/",
+      "finalPath": "/2026/06/08/samsung-com-tela-verde-o-que-pode-ser/",
+      "treatment": "301",
+      "result": "Regra 301 direta e destino existente OK; HTTP da hospedagem pendente"
+    },
+    {
+      "oldPath": "/tag/tela-quebrada/",
+      "finalPath": "/tag/tela-quebrada/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/tag/tela-trincada-do-celular/",
+      "finalPath": "/2026/06/08/tela-trincada-do-celular-posso-continuar-usando-ou-devo-trocar/",
+      "treatment": "301",
+      "result": "Regra 301 direta e destino existente OK; HTTP da hospedagem pendente"
+    },
+    {
+      "oldPath": "/tag/tela-verde-samsung/",
+      "finalPath": "/2026/06/08/samsung-com-tela-verde-o-que-pode-ser/",
+      "treatment": "301",
+      "result": "Regra 301 direta e destino existente OK; HTTP da hospedagem pendente"
+    },
+    {
+      "oldPath": "/tag/troca-de-bateria/",
+      "finalPath": "/tag/troca-de-bateria/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/tag/troca-de-conector/",
+      "finalPath": "/tag/troca-de-conector/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/tag/troca-de-tela-samsung/",
+      "finalPath": "/tag/troca-de-tela-samsung/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/tag/troca-de-tela/",
+      "finalPath": "/tag/troca-de-tela/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/troca-de-bateria-de-celular-em-bombinhas/",
+      "finalPath": "/troca-de-bateria-de-celular-em-bombinhas/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/troca-de-tela-de-celular-em-bombinhas/",
+      "finalPath": "/troca-de-tela-de-celular-em-bombinhas/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    }
+  ],
+  "images": 107,
+  "internalLinks": 2361,
+  "contentHashes": 28,
+  "pages": 62,
+  "sitemapUrls": 61,
+  "hostgatorImageDependencies": 0
+}

@@ -1,0 +1,27 @@
+---
+import Container from '../ui/Container.astro';
+import StorefrontPhoto from '../conversion/StorefrontPhoto.astro';
+import { business, addressText } from '../../data/business';
+const mapsURL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${business.name}, ${addressText}`)}`;
+---
+<section id="nossa-loja" class="section svc-section home-storefront" aria-labelledby="storefront-title">
+  <Container class="storefront-layout">
+    <div class="storefront-copy">
+      <p class="eyebrow">NOSSA LOJA</p>
+      <h2 id="storefront-title">Conheça a ReeCell de perto.</h2>
+      <p class="lead">Sua assistência técnica em Bombas, Bombinhas. Reconheça nossa fachada e encontre a entrada da loja na sua próxima visita.</p>
+      <a class="storefront-link" href={mapsURL}>Ver como chegar <span aria-hidden="true">→</span></a>
+    </div>
+    <StorefrontPhoto />
+  </Container>
+</section>
+<style>
+  .home-storefront { background: var(--color-background); border-top: 1px solid var(--color-border); }
+  .home-storefront :global(.storefront-layout) { display: grid; gap: 2rem; align-items: center; }
+  .storefront-copy { min-width: 0; }
+  .storefront-link { display: inline-flex; gap: 1rem; align-items: center; padding-block: .75rem; font-weight: 600; }
+  @media (min-width: 64rem) {
+    .home-storefront :global(.storefront-layout) { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: var(--home-column-gap); align-items: start; }
+    .home-storefront :global(.storefront-photo) { margin-top: calc(var(--text-sm) * 1.65 + var(--space-md)); }
+  }
+</style>

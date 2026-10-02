@@ -1,0 +1,30 @@
+﻿---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HomeHero from '../components/home/HomeHero.astro';
+import HomeServices from '../components/home/HomeServices.astro';
+import HomeMethod from '../components/home/HomeMethod.astro';
+import HomeBeforeAfter from '../components/home/HomeBeforeAfter.astro';
+import HomeGuidance from '../components/home/HomeGuidance.astro';
+import HomeLocation from '../components/home/HomeLocation.astro';
+import HomeStorefront from '../components/home/HomeStorefront.astro';
+import HomeQuestions from '../components/home/HomeQuestions.astro';
+import HomeFinalCTA from '../components/home/HomeFinalCTA.astro';
+import '../styles/home.css';
+---
+<BaseLayout
+  title="Assistência técnica de celulares em Bombinhas | ReeCell"
+  description="Conserto de celular, troca de tela e bateria em Bombas, Bombinhas. Fale com a ReeCell pelo WhatsApp e consulte o atendimento para seu aparelho."
+  canonical="/"
+>
+  <div class="home-page">
+    <HomeHero />
+    <HomeServices />
+    <HomeMethod />
+    <HomeStorefront />
+    <HomeBeforeAfter />
+    <HomeGuidance />
+    <HomeFinalCTA showMap />
+    <HomeQuestions />
+    <HomeLocation showMap={false} />
+  </div>
+</BaseLayout>

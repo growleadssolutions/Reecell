@@ -1,0 +1,14 @@
+---
+import { render, type CollectionEntry } from 'astro:content';
+import BlogLayout from '../../../../layouts/BlogLayout.astro';
+import { getPublishedPosts } from '../../../../lib/blog';
+import { postParams } from '../../../../lib/permalinks';
+export async function getStaticPaths() {
+  const posts = await getPublishedPosts();
+  return posts.map(post => ({ params: postParams(post.data), props: { post, relatedPosts: posts.filter(other => other.id !== post.id && post.data.category && other.data.category === post.data.category).slice(0, 3) } }));
+}
+interface Props { post: CollectionEntry<'blog'>; relatedPosts: CollectionEntry<'blog'>[] }
+const { post, relatedPosts } = Astro.props;
+const { Content } = await render(post);
+---
+<BlogLayout post={post} relatedPosts={relatedPosts}><Content /></BlogLayout>

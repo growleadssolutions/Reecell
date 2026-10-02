@@ -1,0 +1,23 @@
+---
+import Container from '../ui/Container.astro';
+import WhatsAppCTA from './WhatsAppCTA.astro';
+const items = [
+  ['Qual é o seu celular?', 'Envie a marca e o modelo. Se não souber o modelo completo, comece com as informações que você tem.'],
+  ['O que deixou de funcionar?', 'Descreva a falha: carregamento, tela, som, câmera ou outra função. Conte também o que ainda funciona no aparelho.'],
+  ['Quando começou?', 'Informe há quanto tempo o problema aparece e se houve queda, contato com líquido ou reparo anterior.'],
+];
+---
+<section class="svc-section section repair-budget" aria-labelledby="repair-budget-title">
+  <Container>
+    <div class="home-section-intro">
+      <div><p class="eyebrow">Vamos falar sobre o seu celular?</p><h2 id="repair-budget-title">Peça seu orçamento pelo WhatsApp.</h2></div>
+      <p class="home-support">Comece com estas informações. O valor e o prazo serão confirmados conforme a avaliação, o serviço indicado e a disponibilidade de peças.</p>
+    </div>
+    <div class="detail-cards">
+      {items.map(([title, text], index) => <article><span class="detail-number">0{index + 1}</span><h3>{title}</h3><p>{text}</p></article>)}
+    </div>
+    <div class="method-cta">
+      <WhatsAppCTA label="Pedir orçamento do conserto" message="Olá! Gostaria de um orçamento para consertar meu celular. Marca e modelo: . O problema é: . Começou em: " location="service-budget" context="conserto-de-celular-em-bombinhas" />
+    </div>
+  </Container>
+</section>

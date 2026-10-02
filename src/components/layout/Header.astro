@@ -1,0 +1,20 @@
+---
+import Container from '../ui/Container.astro';
+import WhatsAppCTA from '../conversion/WhatsAppCTA.astro';
+import { business } from '../../data/business';
+import { navigation } from '../../data/navigation';
+const currentPath = Astro.url.pathname;
+const isCurrent = (href: string) => currentPath === href || (href === '/blog/' && /^\/\d{4}\//.test(currentPath));
+---
+<header class="site-header"><Container class="header-inner">
+  <a class="wordmark" href="/" aria-label={`${business.name} — início`}><img src="/reecell-logo.webp" alt={business.name} width="256" height="256" class="header-logo" loading="eager" decoding="async" /></a>
+  <nav class="site-nav desktop-nav" aria-label="Principal"><ul>{navigation.map(link => <li><a href={link.href} aria-current={isCurrent(link.href) ? (currentPath === link.href ? 'page' : 'true') : undefined}>{link.label}</a></li>)}</ul></nav>
+  <WhatsAppCTA class="header-cta desktop-cta" location="header" />
+  <details class="mobile-menu">
+    <summary class="menu-toggle"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span><span class="menu-label-open">Menu</span><span class="menu-label-close">Fechar</span></summary>
+    <div class="mobile-menu-panel">
+      <nav class="site-nav" aria-label="Principal mobile"><ul>{navigation.map(link => <li><a href={link.href} aria-current={isCurrent(link.href) ? (currentPath === link.href ? 'page' : 'true') : undefined}>{link.label}</a></li>)}</ul></nav>
+      <WhatsAppCTA label="Pedir orçamento no WhatsApp" location="mobile-menu" />
+    </div>
+  </details>
+</Container></header>

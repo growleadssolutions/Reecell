@@ -1,0 +1,23 @@
+---
+import Container from '../ui/Container.astro';
+import WhatsAppCTA from './WhatsAppCTA.astro';
+const items = [
+  ['Qual é o seu celular?', 'Envie a marca e o modelo. Essa informação ajuda a consultar a tela compatível e a disponibilidade da peça.'],
+  ['Como ficou a tela?', 'Conte se há imagem e se o toque responde. Se puder, envie uma foto do dano sem mostrar dados pessoais.'],
+  ['Quando aconteceu?', 'Diga se houve uma queda ou impacto e quando a falha começou. Esses detalhes ajudam na orientação inicial.'],
+];
+---
+<section class="svc-section section screen-budget" aria-labelledby="screen-budget-title">
+  <Container>
+    <div class="home-section-intro">
+      <div><p class="eyebrow">Vamos falar sobre a sua tela?</p><h2 id="screen-budget-title">Peça seu orçamento pelo WhatsApp.</h2></div>
+      <p class="home-support">Comece com estas informações. O valor e o prazo serão confirmados conforme a avaliação do aparelho e a disponibilidade da peça.</p>
+    </div>
+    <div class="detail-cards">
+      {items.map(([title, text], index) => <article><span class="detail-number">0{index + 1}</span><h3>{title}</h3><p>{text}</p></article>)}
+    </div>
+    <div class="method-cta">
+      <WhatsAppCTA label="Pedir orçamento da troca de tela" message="Olá! Gostaria de um orçamento para a troca de tela. Marca e modelo: . A tela está assim: . O problema começou: " location="service-budget" context="troca-de-tela-de-celular-em-bombinhas" />
+    </div>
+  </Container>
+</section>

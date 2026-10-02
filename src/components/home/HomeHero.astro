@@ -1,0 +1,25 @@
+---
+import { Image } from 'astro:assets';
+import Container from '../ui/Container.astro';
+import Button from '../ui/Button.astro';
+import WhatsAppCTA from '../conversion/WhatsAppCTA.astro';
+import phonesImage from '../../assets/home/hero-celulares.webp';
+import { business } from '../../data/business';
+---
+<section class="home-hero svc-hero" aria-labelledby="home-title">
+  <Container class="home-split hero-split">
+    <div class="home-hero-copy">
+      <p class="eyebrow">ReeCell · {business.address.neighborhood}, {business.address.city}</p>
+      <h1 id="home-title">Assistência técnica de celulares em Bombinhas.</h1>
+      <p class="home-support">Tela quebrada, bateria que acaba cedo ou celular que não liga? Fale com a ReeCell e entenda o próximo passo para cuidar do seu aparelho.</p>
+      <div class="home-actions">
+        <WhatsAppCTA label="Pedir orçamento no WhatsApp" location="hero" />
+        <Button href="/#servicos" variant="text">Encontrar meu problema <span aria-hidden="true">↗</span></Button>
+      </div>
+      <p class="hero-note">Atendimento para moradores e visitantes de Bombinhas.</p>
+    </div>
+    <figure class="hero-photo">
+      <Image src={phonesImage} alt="Dois celulares com o vidro danificado, ilustrando os reparos de tela." widths={[320, 560, 890]} sizes="(min-width: 64rem) 480px, (min-width: 48rem) 400px, 80vw" format="webp" quality={85} loading="eager" fetchpriority="high" />
+    </figure>
+  </Container>
+</section>

@@ -1,0 +1,63 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Container from '../components/ui/Container.astro';
+import Breadcrumbs from '../components/seo/Breadcrumbs.astro';
+import { legacyArchives } from '../lib/legacy-archives';
+import { getPublishedPosts } from '../lib/blog';
+import { postPath } from '../lib/permalinks';
+import { absoluteURL, breadcrumbNode } from '../lib/structured-data';
+import '../styles/home.css';
+import '../styles/service-pages.css';
+
+export async function getStaticPaths() {
+  const posts = await getPublishedPosts();
+  return legacyArchives.map(archive => {
+    const members = archive.memberPaths!.map(path => {
+      const post = posts.find(post => postPath(post.data) === path);
+      if (!post) throw new Error(`Artigo ausente no arquivo ${archive.oldPath}: ${path}`);
+      return post;
+    });
+    return { params: { legacy: archive.oldPath.slice(1, -1) }, props: { archive, members } };
+  });
+}
+interface Props { archive: typeof legacyArchives[number]; members: CollectionEntry<'blog'>[] }
+const { archive, members } = Astro.props;
+const pageNumber = Number(archive.oldPath.match(/\/page\/(\d+)\//)?.[1] ?? 1);
+const title = `${archive.title}${pageNumber > 1 ? ` — Página ${pageNumber}` : ''}`;
+const description = `${title}. Consulte os artigos da ReeCell reunidos neste arquivo.`;
+const crumbs = [{ name: 'Início', href: '/' }, { name: 'Blog', href: '/blog/' }, { name: title, href: archive.oldPath }];
+const structuredData = [breadcrumbNode(crumbs, absoluteURL(archive.oldPath)), {
+  '@type': 'ItemList', '@id': `${absoluteURL(archive.oldPath)}#artigos`,
+  itemListElement: members.map((post, index) => ({ '@type': 'ListItem', position: index + 1, url: absoluteURL(postPath(post.data)), name: post.data.title })),
+}];
+---
+<BaseLayout title={`${title} | ReeCell`} description={description} canonical={archive.oldPath} structuredData={structuredData}>
+  <div class="home-page detail-page">
+    <section class="svc-hero detail-hero"><Container>
+      <Breadcrumbs items={crumbs} />
+      <p class="eyebrow">Blog ReeCell</p><h1>{title}</h1>
+    </Container></section>
+    <section class="svc-section section"><Container>
+      <h2>Artigos neste arquivo</h2>
+      <div class="archive-posts">{members.map(post => <article>
+        <h3><a href={postPath(post.data)}>{post.data.title}</a></h3>
+        <p>{post.data.description}</p>
+        <a href={postPath(post.data)} aria-label={`Ler: ${post.data.title}`}>Ler artigo <span aria-hidden="true">→</span></a>
+      </article>)}</div>
+      {archive.pagination && archive.pagination.length > 1 && <nav class="archive-pagination" aria-label="Paginação do arquivo">{archive.pagination.map((path, index) => <a href={path} aria-label={`Página ${index + 1}`} aria-current={path === archive.oldPath ? 'page' : undefined}>{index + 1}</a>)}</nav>}
+      <p class="archive-back"><a href="/blog/">Ver todos os artigos</a></p>
+    </Container></section>
+  </div>
+</BaseLayout>
+<style>
+  .archive-posts { display: grid; gap: 2rem; }
+  .archive-posts article { min-width: 0; border-top: 1px solid var(--color-border); padding-top: 1.5rem; }
+  .archive-posts p { color: var(--color-text-muted); }
+  .archive-pagination { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 3rem; }
+  .archive-pagination a { min-width: 44px; min-height: 44px; display: grid; place-items: center; border: 1px solid var(--color-border); }
+  .archive-pagination a[aria-current] { background: var(--color-primary); color: white; }
+  .archive-back { margin-top: 2rem; }
+  @media (min-width: 48rem) { .archive-posts { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (min-width: 75rem) { .archive-posts { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+</style>

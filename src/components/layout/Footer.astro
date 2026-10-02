@@ -1,0 +1,13 @@
+---
+import Container from '../ui/Container.astro';
+import WhatsAppCTA from '../conversion/WhatsAppCTA.astro';
+import { business, addressText } from '../../data/business';
+import { navigation, services } from '../../data/navigation';
+---
+<footer class="site-footer"><Container><div class="footer-grid">
+  <div><p class="wordmark">{business.name}</p><address>{addressText}<br /><a href={`tel:${business.phone}`}>{business.phoneDisplay}</a></address>
+  <WhatsAppCTA label="Conversar no WhatsApp" variant="text" location="footer" />
+  {business.socialLinks.map(url => <p><a href={url} rel="me">{new URL(url).hostname}</a></p>)}</div>
+  <nav aria-label="Rodapé"><h2>Navegação</h2><ul>{navigation.map(link => <li><a href={link.href}>{link.label}</a></li>)}</ul></nav>
+  <div><h2>Serviços</h2><ul>{services.map(service => <li><a href={service.href}>{service.label}</a></li>)}</ul></div>
+</div><p class="copyright">© {new Date().getFullYear()} {business.name}. Todos os direitos reservados.</p></Container></footer>

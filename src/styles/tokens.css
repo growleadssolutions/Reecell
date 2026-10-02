@@ -1,0 +1,33 @@
+:root {
+  --font-heading: 'Manrope', Arial, sans-serif;
+  --font-body: 'Inter', Arial, sans-serif;
+  --color-primary: #602A59;
+  --color-primary-soft: #F1E5ED;
+  /* Paleta sem azul: roxo da marca e tons neutros. */
+  --color-technical: #454145;
+  --color-technical-soft: #F0EDEF;
+  --color-technical-border: #CEC7CC;
+  --color-background: #F7F5F6;
+  --color-surface: #FFFFFF;
+  --color-text: #262226;
+  --color-text-muted: #676167;
+  --color-border: #E8E3E6;
+  --space-xs: .5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4.5rem;
+  --space-section: clamp(3rem, 7vw, 6rem);
+  --radius-sm: .25rem;
+  --radius-md: .5rem;
+  --container-width: 1240px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --text-sm: .875rem;
+  --text-base: 1rem;
+  --text-lead: clamp(1.125rem, 2vw, 1.25rem);
+  --text-h1: clamp(2.4rem, 5vw, 4.5rem);
+  --text-h2: clamp(1.75rem, 3vw, 2.75rem);
+  /* Breakpoints: 48rem (tablet), 64rem (desktop). Tokens não funcionam
+     em condições @media; reutilizar esses dois valores. */
+}

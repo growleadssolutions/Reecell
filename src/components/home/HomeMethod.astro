@@ -1,0 +1,18 @@
+---
+import Container from '../ui/Container.astro';
+import WhatsAppCTA from '../conversion/WhatsAppCTA.astro';
+const steps = [
+  { number: '01', title: 'Você explica', text: 'Conte o modelo e o problema pelo WhatsApp.' },
+  { number: '02', title: 'A equipe orienta', text: 'Entenda o próximo passo antes de vir à loja.' },
+  { number: '03', title: 'Avaliamos', text: 'Na loja, avaliamos o aparelho e o reparo necessário.' },
+  { number: '04', title: 'Você decide', text: 'Com as orientações em mãos, escolha como seguir.' },
+];
+---
+<section class="section home-method" aria-labelledby="method-title"><Container>
+  <div class="home-section-intro"><div><p class="eyebrow">Como funciona</p><h2 id="method-title">Do primeiro contato<br class="desktop-break" /> ao próximo passo.</h2></div></div>
+  <ol class="method-grid">{steps.map(step => <li><span class="method-number">{step.number}</span><h3>{step.title}</h3><p>{step.text}</p></li>)}</ol>
+  <div class="method-cta">
+    <p>Já sabe qual é o problema?</p>
+    <WhatsAppCTA label="Começar pelo WhatsApp →" message="Olá! Quero explicar o problema do meu celular e entender o próximo passo." location="method" />
+  </div>
+</Container></section>

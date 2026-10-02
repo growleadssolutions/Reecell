@@ -1,0 +1,56 @@
+---
+import LocationMap from '../conversion/LocationMap.astro';
+interface Props { showMap?: boolean }
+const { showMap = true } = Astro.props;
+import Container from '../ui/Container.astro';
+import WhatsAppCTA from '../conversion/WhatsAppCTA.astro';
+import { business, addressText } from '../../data/business';
+const mapsURL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${business.name}, ${addressText}`)}`;
+const displayStreet = business.address.street.replace(' - SI 04', ' – Sala 04');
+---
+<section id="contato" class="section home-location" aria-labelledby="location-title">
+  <Container class="location-layout">
+    <div class="location-intro">
+      <p class="eyebrow">NOS ENCONTRE EM BOMBAS</p>
+      <h2 id="location-title">Assistência técnica perto de você em Bombinhas.</h2>
+      <p class="location-support">Traga seu aparelho para uma avaliação na ReeCell, no bairro Bombas. Antes de sair de casa, você também pode falar com a equipe pelo WhatsApp.</p>
+      <div class="location-actions">
+        <WhatsAppCTA label="Falar com a ReeCell" location="location" class="location-cta" />
+        <a class="location-directions" href={mapsURL}>Ver como chegar <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="location-sign">
+        <span class="location-pin" aria-hidden="true"></span>
+        <p><strong>BOMBAS</strong><span>BOMBINHAS — SC</span></p>
+      </div>
+    </div>
+    <div class="location-details">
+      <div class="location-entry">
+        <span class="location-number" aria-hidden="true">01</span>
+        <div>
+          <h3 class="location-label">ENDEREÇO</h3>
+          <address><strong>{displayStreet}</strong><br />{business.address.neighborhood}, {business.address.city} – {business.address.state}<br /><span class="location-postal">CEP {business.address.postalCode}</span></address>
+          <a class="location-map" href={mapsURL}>Ver no mapa <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <div class="location-entry">
+        <span class="location-number" aria-hidden="true">02</span>
+        <div>
+          <h3 class="location-label">HORÁRIO</h3>
+          <dl class="location-schedule">
+            {business.hours.map(h => <div><dt>{h.label}</dt><dd>{h.opens} — {h.closes}</dd></div>)}
+            <div><dt>Domingo</dt><dd class="location-closed">Fechado</dd></div>
+          </dl>
+        </div>
+      </div>
+      <div class="location-entry">
+        <span class="location-number" aria-hidden="true">03</span>
+        <div>
+          <h3 class="location-label">CONTATO</h3>
+          <a class="location-phone" href={`tel:${business.phone}`}>{business.phoneDisplay}</a>
+          <p class="location-contact-note">Atendimento também pelo WhatsApp.</p>
+        </div>
+      </div>
+      {showMap && <div class="location-embed"><LocationMap /></div>}
+    </div>
+  </Container>
+</section>

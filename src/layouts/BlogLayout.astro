@@ -1,0 +1,32 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { Image, getImage } from 'astro:assets';
+import BaseLayout from './BaseLayout.astro';
+import Container from '../components/ui/Container.astro';
+import Breadcrumbs from '../components/seo/Breadcrumbs.astro';
+import WhatsAppCTA from '../components/conversion/WhatsAppCTA.astro';
+import { postPath } from '../lib/permalinks';
+import { absoluteURL, breadcrumbNode, entityIds, type BreadcrumbItem, type SchemaNode } from '../lib/structured-data';
+interface Props { post: CollectionEntry<'blog'>; relatedPosts?: CollectionEntry<'blog'>[]; breadcrumbs?: BreadcrumbItem[] }
+const { post, relatedPosts = [], breadcrumbs = [{ name: 'Início', href: '/' }, { name: 'Blog', href: '/blog/' }, { name: post.data.title, href: postPath(post.data) }] } = Astro.props;
+const { data } = post;
+const socialImage = data.image ? await getImage({ src: data.image, width: Math.min(1200, data.image.width), format: 'jpeg', quality: 80 }) : undefined;
+const url = absoluteURL(postPath(data));
+const formatDate = (date: string) => new Intl.DateTimeFormat('pt-BR', { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(`${date}T12:00:00Z`));
+const graph: SchemaNode[] = [breadcrumbNode(breadcrumbs, url), {
+  '@type': 'Article', '@id': `${url}#article`, headline: data.title, description: data.description,
+  datePublished: data.publishedDate, ...(data.updatedDate && { dateModified: data.updatedDate }),
+  mainEntityOfPage: { '@id': `${url}#webpage` }, publisher: { '@id': entityIds.organization },
+  inLanguage: 'pt-BR', ...(socialImage && { image: absoluteURL(socialImage.src) }),
+}];
+---
+<BaseLayout title={`${data.title} | ReeCell`} description={data.description} canonical={url} type="article" image={socialImage?.src} imageAlt={data.imageAlt} publishedTime={data.publishedDate} modifiedTime={data.updatedDate} structuredData={graph}>
+  <Container><div class="section article"><Breadcrumbs items={breadcrumbs} />
+    <article><header><h1>{data.title}</h1><p class="lead">{data.description}</p><p class="article-dates">Publicado em <time datetime={data.publishedDate}>{formatDate(data.publishedDate)}</time>{data.updatedDate && <> · Atualizado em <time datetime={data.updatedDate}>{formatDate(data.updatedDate)}</time></>}</p></header>
+    {data.image && <Image class="article-cover" src={data.image} alt={data.imageAlt!} widths={[400, 720, 1080].filter(width => width <= data.image!.width)} sizes="(max-width: 48rem) 90vw, 720px" format="webp" loading="eager" />}
+    <div class="article-content"><slot /></div>
+    {data.cta && <aside class="article-cta" aria-label="Consultar atendimento sobre este assunto"><h2>{data.cta.heading}</h2><p>{data.cta.description}</p><WhatsAppCTA label={data.cta.label} message={data.cta.message} location="article" context={data.slug} /></aside>}
+    </article>
+    {relatedPosts.filter(p => !p.data.draft && p.id !== post.id).length > 0 && <aside class="section"><h2>Continue a leitura</h2><ul>{relatedPosts.filter(p => !p.data.draft && p.id !== post.id).map(p => <li><a href={postPath(p.data)}>{p.data.title}</a></li>)}</ul></aside>}
+  </div></Container>
+</BaseLayout>

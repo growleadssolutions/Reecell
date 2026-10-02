@@ -1,0 +1,27 @@
+---
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import SeoHead, { type Props as SeoProps } from '../components/seo/SeoHead.astro';
+import StructuredData from '../components/seo/StructuredData.astro';
+import { baseGraph, entityIds, absoluteURL, type SchemaNode } from '../lib/structured-data';
+import '../styles/global.css';
+interface Props extends SeoProps { structuredData?: SchemaNode[]; includeStructuredData?: boolean }
+const { structuredData = [], includeStructuredData = true, ...seo } = Astro.props;
+const url = new URL(seo.canonical ?? Astro.url.pathname, absoluteURL('/'));
+url.search = ''; url.hash = '';
+const breadcrumb = structuredData.find(node => node['@type'] === 'BreadcrumbList');
+const nodes: SchemaNode[] = [...baseGraph(), { '@type': 'WebPage', '@id': `${url.href}#webpage`, url: url.href, name: seo.title, description: seo.description, inLanguage: 'pt-BR', isPartOf: { '@id': entityIds.website }, about: { '@id': entityIds.localbusiness }, ...(breadcrumb && { breadcrumb: { '@id': breadcrumb['@id'] } }) }, ...structuredData];
+---
+<!doctype html>
+<html lang="pt-BR"><head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/reecell-favicon.png" />
+  <link rel="icon" type="image/x-icon" sizes="32x32" href="/favicon.ico" />
+  <link rel="preload" href="/fonts/manrope-latin-variable.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/inter-latin-variable.woff2" as="font" type="font/woff2" crossorigin />
+  <meta name="theme-color" content="#602A59" />
+  <SeoHead {...seo} />{includeStructuredData && <StructuredData nodes={nodes} />}
+</head><body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <Header /><main id="conteudo" tabindex="-1"><slot /></main><Footer />
+</body></html>

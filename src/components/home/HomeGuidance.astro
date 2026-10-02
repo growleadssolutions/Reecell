@@ -1,0 +1,22 @@
+---
+import Container from '../ui/Container.astro';
+import WhatsAppCTA from '../conversion/WhatsAppCTA.astro';
+---
+<section class="section home-guidance" aria-labelledby="guidance-title">
+  <Container class="home-split">
+    <div class="home-heading-block">
+      <p class="eyebrow">Um primeiro passo mais simples</p>
+      <h2 id="guidance-title">Antes de sair de casa, mande uma mensagem.</h2>
+      <p class="home-support">Ficar sem celular muda os planos: trabalho, mapas, conversas e até a viagem. Pelo WhatsApp, você explica o problema e consulta o atendimento antes de vir até Bombas.</p>
+      <WhatsAppCTA label="Explicar o que aconteceu" message="Olá! Quero explicar o que aconteceu com meu celular e consultar o atendimento." location="guidance" />
+    </div>
+    <div class="guidance-detail">
+      <h3>O que ajuda nessa primeira conversa</h3>
+      <dl>
+        <div><dt>Marca e modelo</dt><dd>Se souber, informe o modelo completo. Essa informação ajuda a consultar peças e possibilidades de reparo.</dd></div>
+        <div><dt>O que mudou no aparelho</dt><dd>Conte quando a falha começou e se houve queda, contato com líquido ou outro acontecimento.</dd></div>
+        <div><dt>Uma foto, quando ajudar</dt><dd>Uma imagem pode facilitar a explicação de um dano visível. A confirmação da causa pode exigir avaliação na loja.</dd></div>
+      </dl>
+    </div>
+  </Container>
+</section>

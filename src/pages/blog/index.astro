@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Container from '../../components/ui/Container.astro';
+import WhatsAppCTA from '../../components/conversion/WhatsAppCTA.astro';
+import HomeFinalCTA from '../../components/home/HomeFinalCTA.astro';
+import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import { Image } from 'astro:assets';
+import screen from '../../assets/home/card-tela-quebrada.webp';
+import battery from '../../assets/home/card-bateria-descarregando.webp';
+import phone from '../../assets/home/card-celular-nao-liga.webp';
+import { getPublishedPosts } from '../../lib/blog';
+import { postPath } from '../../lib/permalinks';
+import '../../styles/home.css';
+import '../../styles/service-pages.css';
+const topics = [
+  { title: 'Tela: vidro, imagem e toque', text: 'Uma trinca, uma mancha e uma falha no toque são sinais diferentes. Entenda quais informações ajudam na consulta e o que perguntar sobre o reparo.', image: screen, href: '/troca-de-tela-de-celular-em-bombinhas/', label: 'Entender a avaliação da tela' },
+  { title: 'Bateria e carregamento', text: 'Descarregar rápido e não reconhecer o carregador não são a mesma situação. Veja como descrever o comportamento do aparelho antes de consultar a troca.', image: battery, href: '/troca-de-bateria-de-celular-em-bombinhas/', label: 'Entender a avaliação da bateria' },
+  { title: 'Quando o celular dá problema', text: 'O aparelho não liga, trava ou apresenta outra falha? Saiba por onde começar a conversa com a assistência, mesmo sem saber a causa do problema.', image: phone, href: '/conserto-de-celular-em-bombinhas/', label: 'Conhecer a avaliação do celular' },
+];
+const posts = await getPublishedPosts();
+const formatDate = (date: string) => new Intl.DateTimeFormat('pt-BR', { dateStyle: 'medium', timeZone: 'UTC' }).format(new Date(`${date}T12:00:00Z`));
+---
+<BaseLayout title="Blog ReeCell" description="Orientações sobre telas, baterias, carregamento e cuidados com o celular. Leia os artigos da ReeCell em Bombinhas." canonical="/blog/">
+  <div class="home-page detail-page">
+  <section class="svc-hero detail-hero" aria-labelledby="blog-title">
+    <Container>
+      <Breadcrumbs items={[{ name: 'Início', href: '/' }, { name: 'Blog', href: '/blog/' }]} />
+      <div class="detail-hero-grid"><div><p class="eyebrow">Blog ReeCell · Orientação para o dia a dia</p>
+      <h1 id="blog-title">Entenda melhor o seu celular.</h1>
+      <p class="lead">Do primeiro sinal de uma falha às perguntas sobre o orçamento: encontre um ponto de partida para conversar sobre o seu aparelho.</p>
+      <a class="button" href="#artigos">Ler os artigos</a></div>
+      <aside class="detail-blog-intro"><p class="eyebrow">Precisa de atendimento agora?</p><h2>Conte o que mudou no seu celular.</h2><p>Envie o modelo e descreva o problema. A equipe pode orientar o próximo passo para uma avaliação em Bombas, Bombinhas.</p><WhatsAppCTA label="Falar com a ReeCell" location="blog-hero" /></aside></div>
+    </Container>
+  </section>
+  <section id="artigos" class="svc-section section" aria-labelledby="articles-title"><Container>
+    <div class="home-section-intro"><div><p class="eyebrow">Blog ReeCell</p><h2 id="articles-title">Cuidados e reparos, por assunto.</h2></div><p class="home-support">Veja os sinais, os cuidados e as perguntas que ajudam a entender o problema antes de pedir uma avaliação.</p></div>
+    <div class="blog-posts">{posts.map(post => <article class="blog-post"><p class="blog-post-meta">{post.data.category} <span aria-hidden="true">·</span> <time datetime={post.data.publishedDate}>{formatDate(post.data.publishedDate)}</time></p><h3><a href={postPath(post.data)}>{post.data.title}</a></h3><p>{post.data.description}</p><a class="blog-post-link" href={postPath(post.data)} aria-label={`Ler: ${post.data.title}`}>Ler artigo <span aria-hidden="true">→</span></a></article>)}</div>
+  </Container></section>
+  <section id="orientacoes" class="svc-section section"><Container><div class="home-section-intro"><div><p class="eyebrow">Comece pelo assunto</p><h2>O que você quer entender?</h2></div><p class="home-support">As páginas de serviço reúnem sinais comuns, informações para a avaliação e respostas às dúvidas sobre cada reparo.</p></div>
+    <div class="detail-cards detail-guide-grid">{topics.map(topic => <article class="home-service"><div class="service-image service-image--photo"><Image src={topic.image} alt="" widths={[320, 640]} sizes="(min-width: 64rem) 30vw, 90vw" format="webp" loading="lazy" /></div><div class="service-copy"><h3>{topic.title}</h3><p>{topic.text}</p><a href={topic.href}>{topic.label} →</a></div></article>)}</div>
+  </Container></section>
+  <section class="svc-section section detail-band"><Container><div class="detail-split"><div><p class="eyebrow">Antes de pedir um orçamento</p><h2>Três perguntas para uma conversa mais clara.</h2><p class="lead">Anote o que você percebeu no uso do aparelho. Não é preciso tentar descobrir sozinho qual peça está com defeito.</p></div><div class="detail-topics">
+    <article><span class="detail-number">01</span><div><h3>Quando o problema começou?</h3><p>Conte se a falha apareceu de repente ou foi ficando mais frequente. Informe também se houve queda, contato com líquido ou algum reparo anterior.</p></div></article>
+    <article><span class="detail-number">02</span><div><h3>O que ainda funciona?</h3><p>Imagem, toque, som, vibração e carregamento ajudam a descrever o estado do celular. Relate o que você já observou durante o uso.</p></div></article>
+    <article><span class="detail-number">03</span><div><h3>O que preciso confirmar?</h3><p>Antes de autorizar um serviço, converse sobre a avaliação, a peça proposta, o valor total, o prazo e as condições de garantia.</p></div></article>
+  </div></div><div class="detail-inline-cta"><p>Já tem essas informações?</p><WhatsAppCTA label="Conversar sobre o meu aparelho" location="blog-guidance" /></div></Container></section>
+  <HomeFinalCTA />
+  </div>
+</BaseLayout>
+<style>
+  .service-image--photo { padding: 0; aspect-ratio: 3 / 2; overflow: hidden; }
+  .service-image--photo :global(img) { display: block; width: 100%; height: 100%; aspect-ratio: 3 / 2; object-fit: cover; filter: none; mix-blend-mode: normal; }
+  .detail-guide-grid article:last-child .service-image--photo :global(img) { object-position: center 65%; }
+  .blog-posts { display: grid; gap: 2.5rem; margin-top: 2.5rem; }
+  .blog-post { min-width: 0; border-top: 1px solid var(--color-technical-border); padding-top: 1.5rem; display: flex; flex-direction: column; }
+  .blog-post-meta { color: var(--color-text-muted); font-size: .8125rem; }
+  .blog-post h3 { font-size: clamp(1.2rem, 1.7vw, 1.5rem); line-height: 1.3; }
+  .blog-post h3 a { text-decoration: none; }
+  .blog-post h3 a:hover { text-decoration: underline; }
+  .blog-post > p:not(.blog-post-meta) { color: var(--color-text-muted); }
+  .blog-post-link { margin-top: auto; padding-top: .5rem; font-weight: 600; }
+  @media (min-width: 48rem) { .blog-posts { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (min-width: 72rem) { .blog-posts { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+</style>

@@ -1,0 +1,37 @@
+---
+import Container from '../ui/Container.astro';
+import WhatsAppCTA from '../conversion/WhatsAppCTA.astro';
+import { homeServices } from '../../data/home';
+import { Image } from 'astro:assets';
+import screen from '../../assets/home/card-tela-quebrada.webp';
+import battery from '../../assets/home/card-bateria-descarregando.webp';
+import charging from '../../assets/home/card-nao-carrega.webp';
+import phone from '../../assets/home/card-celular-nao-liga.webp';
+const cards = [
+  { ...homeServices[0], title: 'Tela quebrada', description: 'Trincou, quebrou ou parou de responder?', image: screen, alt: 'Celular com a tela quebrada' },
+  { ...homeServices[1], title: 'Bateria descarregando', description: 'Celular descarrega rápido ou desliga?', image: battery, alt: 'Celular conectado ao carregador com indicador de bateria baixa' },
+  { ...homeServices[2], title: 'Não carrega', description: 'Cabo não conecta ou carga fica falhando?', image: charging, alt: 'Conector de carga de celular' },
+  { ...homeServices[3], title: 'Celular não liga', description: 'Travou, apagou ou não dá sinal de vida?', image: phone, alt: 'Celular com a tela apagada sobre uma mesa de madeira' },
+];
+---
+<section id="servicos" class="section home-services" aria-labelledby="services-title">
+  <Container>
+    <div class="home-section-intro">
+      <div><p class="eyebrow">Conserto e manutenção</p><h2 id="services-title">O que aconteceu<br class="desktop-break" /> com seu celular?</h2></div>
+    </div>
+    <div class="home-service-grid">
+      {cards.map(item => (
+        <article class="home-service" id={`servico-${item.id}`}>
+          <div class="service-image service-image--photo">
+            <Image src={item.image} alt={item.alt} widths={[320, 640]} sizes="(min-width: 48rem) 40vw, 90vw" format="webp" quality={80} loading="lazy" />
+          </div>
+          <div class="service-copy">
+          <h3>{item.title}</h3>
+          <p>{item.description}</p>
+          <WhatsAppCTA label="Ver solução →" message={item.message} variant="text" location="services" context={item.id} />
+          </div>
+        </article>
+      ))}
+    </div>
+  </Container>
+</section>
