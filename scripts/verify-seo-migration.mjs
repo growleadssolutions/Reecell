@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { readFile, readdir, access, writeFile } from 'node:fs/promises';
-import { createHash } from 'node:crypto';
+import { contentHash } from './content-hash.mjs';
 import { migration, migrationRoutes, matchRoute, origin } from './seo-routing.mjs';
 const root = new URL('../', import.meta.url);
 const dist = new URL('dist/', root);
@@ -18,7 +18,7 @@ assert(config.routes.length < 1024, 'Limite de regras da hospedagem');
 for (const path of (await read('docs/seo-migration/search-console-paths.txt')).trim().split(/\r?\n/)) assert(routes.some(e => e.oldPath === path), `URL fornecida sem tratamento: ${path}`);
 for (const page of JSON.parse(await read('docs/seo-migration/source/crawl.json')).pages) assert(routes.some(e => e.oldPath === new URL(page.url).pathname), `URL descoberta sem tratamento: ${page.url}`);
 for (const [path, hash] of Object.entries(JSON.parse(await read('docs/seo-migration/content-baseline.json')))) {
-  assert.equal(createHash('sha256').update(await readFile(new URL(path, root))).digest('hex'), hash, `Conteúdo/estilo existente alterado: ${path}`);
+  assert.equal(contentHash(await readFile(new URL(path, root))), hash, `Conteúdo/estilo existente alterado: ${path}`);
   localResult.contentHashes++;
 }
 for (const entry of routes) {

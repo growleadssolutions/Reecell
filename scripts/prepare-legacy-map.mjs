@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { readFile, writeFile, readdir } from 'node:fs/promises';
-import { createHash } from 'node:crypto';
+import { contentHash } from './content-hash.mjs';
 const root = new URL('../', import.meta.url);
 const source = JSON.parse(await readFile(new URL('docs/seo-migration/source/inventory.json', root), 'utf8'));
 const crawl = JSON.parse(await readFile(new URL('docs/seo-migration/source/crawl.json', root), 'utf8'));
@@ -61,7 +61,7 @@ async function hashTree(dir) {
   for (const entry of await readdir(new URL(dir, root), { withFileTypes: true })) {
     const p = `${dir}/${entry.name}`;
     if (entry.isDirectory()) await hashTree(p);
-    else hashes[p] = createHash('sha256').update(await readFile(new URL(p, root))).digest('hex');
+    else hashes[p] = contentHash(await readFile(new URL(p, root)));
   }
 }
 await hashTree('src/content/blog');
