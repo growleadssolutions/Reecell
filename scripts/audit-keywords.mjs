@@ -1,0 +1,20 @@
+import fs from 'node:fs';
+const dir = 'docs/auditoria-conteudo';
+const pages = JSON.parse(fs.readFileSync(`${dir}/inventario.json`, 'utf8')).paginas;
+const plan = JSON.parse(fs.readFileSync(`${dir}/planejamento.json`, 'utf8'));
+const find = slug => { const p = pages.find(p => p.slug === slug && p.tipo !== 'arquivo'); if (!p) throw Error(`URL ausente: ${slug}`); return p; };
+const rows = plan.map(([keyword, slug, sobreposicao, acao, status, motivo, relacionados]) => {
+ const p = find(slug);
+ return {keyword, url: p.url, slug: p.slug, title: p.title, h1: p.h1, sobreposicao, status, acao, motivo, relacionados: relacionados.map(slug => find(slug).url)};
+});
+const keys = Object.keys(rows[0]);
+const quote = v => '"' + String(Array.isArray(v) ? v.join(' | ') : v).replaceAll('"', '""') + '"';
+fs.writeFileSync(`${dir}/matriz-keywords.csv`, '\ufeff' + [keys, ...rows.map(r => keys.map(k => r[k]))].map(r=>r.map(quote).join(';')).join('\r\n')+'\r\n');
+const escape = s => String(s).replaceAll('|', '\\|');
+let md = '# Cruzamento das 15 keywords com o conteúdo atual\n\nFase 1, 06/10/2026. Recomendações editoriais; nenhuma alteração de conteúdo ou URL executada. URLs apontam ao domínio canônico configurado; dados extraídos do build local, sem verificação de produção.\n\n';
+md += '| Keyword | URL existente principal candidata | Sobreposição | Status | Ação |\n| --- | --- | --- | --- | --- |\n';
+for (const r of rows) md += `| ${r.keyword} | ${new URL(r.url).pathname} | ${r.sobreposicao} | ${r.status} | ${r.acao} |\n`;
+for (const r of rows) md += `\n## ${r.keyword}\n\n| Campo | Valor atual / recomendação |\n| --- | --- |\n| URL | ${r.url} |\n| Slug | ${r.slug} |\n| Title | ${escape(r.title)} |\n| H1 | ${escape(r.h1)} |\n| Sobreposição | ${r.sobreposicao} |\n| Status | ${r.status} |\n| Ação | ${r.acao} |\n\n${r.motivo}\n\nOutras URLs relacionadas:\n\n${r.relacionados.map(u=>'- '+u).join('\n')}\n`;
+fs.writeFileSync(`${dir}/matriz-keywords.md`, md);
+if (rows.length !== 15 || new Set(rows.map(r=>r.keyword)).size !== 15) throw Error('Planejamento incompleto ou repetido');
+console.log('15 keywords verificadas; todas as URLs principais e relacionadas existem no inventário.');
