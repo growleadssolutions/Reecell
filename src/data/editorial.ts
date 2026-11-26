@@ -27,8 +27,9 @@ const contextualLinks: Record<string, CommercialLink[]> = {
   'celular-carregando-lentamente': [{ href: diagnosis, label: 'Investigar a causa do carregamento lento' }],
   'camera-do-celular-embacada-ou-tremendo': [{ href: diagnosis, label: 'Consultar avaliação de falhas na câmera' }],
   'alto-falante-ou-microfone-do-celular-nao-funciona': [{ href: diagnosis, label: 'Consultar avaliação do áudio do celular' }],
-  'melhores-lojas-de-celulares-em-bombinhas': [{ href: '/', label: 'Conhecer a ReeCell, assistência técnica em Bombas' }],
+  'melhores-lojas-de-celulares-em-bombinhas': [{ href: '/', label: 'Conhecer a ReeCell, assistência técnica em Bombas' }, { href: '/2026/11/26/onde-comprar-celular-em-bombinhas/', label: 'Consultar a compra de um celular na ReeCell em Bombas' }],
 };
 export function commercialLinksForArticle(slug: string, category?: string): CommercialLink[] {
+  if (category === 'Compras em Bombinhas') return [{ href: '/', label: 'Conhecer a loja e o atendimento da ReeCell' }];
   return contextualLinks[slug] ?? [{ href: `/${serviceForArticle(slug, category)}/`, label: category === 'Tela e imagem' ? 'Consultar avaliação da tela em Bombinhas' : slug === 'troca-de-bateria-de-celular-sinais' ? 'Conhecer o serviço de troca de bateria' : 'Consultar uma avaliação técnica em Bombinhas' }];
 }

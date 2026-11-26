@@ -12,6 +12,7 @@ import { absoluteURL, breadcrumbNode, entityIds, type BreadcrumbItem, type Schem
 interface Props { post: CollectionEntry<'blog'>; relatedPosts?: CollectionEntry<'blog'>[]; breadcrumbs?: BreadcrumbItem[]; headings?: { depth: number; slug: string; text: string }[] }
 const { post, relatedPosts = [], headings = [], breadcrumbs = [{ name: 'Início', href: '/' }, { name: 'Blog', href: '/blog/' }, { name: post.data.title, href: postPath(post.data) }] } = Astro.props;
 const { data } = post;
+const isShoppingGuide = data.category === 'Compras em Bombinhas';
 const socialImage = data.image ? await getImage({ src: data.image, width: Math.min(1200, data.image.width), format: 'jpeg', quality: 80 }) : undefined;
 const url = absoluteURL(postPath(data));
 const commercialLinks = commercialLinksForArticle(data.slug, data.category);
@@ -24,19 +25,21 @@ const graph: SchemaNode[] = [breadcrumbNode(breadcrumbs, url), {
   datePublished: data.publishedDate, ...(data.updatedDate && { dateModified: data.updatedDate }),
   mainEntityOfPage: { '@id': `${url}#webpage` }, publisher: { '@id': entityIds.organization },
   ...(hasVerifiedAuthor && { author: { '@type': 'Person', name: 'Gabriel Souza', url: absoluteURL('/author/gabriel-souza/') } }),
+  ...(!hasVerifiedAuthor && data.editorialAuthor && { author: { '@type': 'Organization', '@id': entityIds.organization, name: data.editorialAuthor, url: absoluteURL('/') } }),
   inLanguage: 'pt-BR', ...(socialImage && { image: absoluteURL(socialImage.src) }),
 }];
 ---
-<BaseLayout title={seoTitles[data.slug] ?? `${data.title} | ReeCell`} description={data.description} canonical={url} type="article" image={socialImage?.src} imageAlt={data.imageAlt} publishedTime={data.publishedDate} modifiedTime={data.updatedDate} structuredData={graph}>
+<BaseLayout title={data.seoTitle ?? seoTitles[data.slug] ?? `${data.title} | ReeCell`} description={data.description} canonical={url} type="article" image={socialImage?.src} imageAlt={data.imageAlt} publishedTime={data.publishedDate} modifiedTime={data.updatedDate} structuredData={graph}>
   <Container><div class="section article"><Breadcrumbs items={breadcrumbs} />
     <article><header><h1>{data.title}</h1><p class="lead">{data.description}</p><p class="article-dates">Publicado em <time datetime={data.publishedDate}>{formatDate(data.publishedDate)}</time>{data.updatedDate && <> · Atualizado em <time datetime={data.updatedDate}>{formatDate(data.updatedDate)}</time></>}</p></header>
     {hasVerifiedAuthor && <p class="article-dates">Por <a href="/author/gabriel-souza/" rel="author">Gabriel Souza</a></p>}
+    {!hasVerifiedAuthor && data.editorialAuthor && <p class="article-dates">Conteúdo comercial da <a href="/" rel="author">{data.editorialAuthor}</a></p>}
     {data.image && <Image class="article-cover" src={data.image} alt={data.imageAlt!} widths={[400, 720, 1080].filter(width => width <= data.image!.width)} sizes="(max-width: 48rem) 90vw, 720px" format="webp" loading="eager" />}
     {headings.filter(heading => heading.depth === 2).length > 2 && <nav class="article-toc" aria-label="Neste artigo"><strong>Neste artigo</strong><ul>{headings.filter(heading => heading.depth === 2).map(heading => <li><a href={`#${heading.slug}`}>{heading.text}</a></li>)}</ul></nav>}
     <div class="article-content"><slot /></div>
     <aside class="article-local" aria-label="Atendimento local relacionado">
-      <h2>Precisa de avaliação em Bombinhas?</h2>
-      <p>A ReeCell fica no bairro Bombas, em Bombinhas (SC), e atende moradores e visitantes. Informe o modelo e os sintomas para consultar a possibilidade de atendimento. O diagnóstico, o valor e o prazo dependem da avaliação do aparelho.</p>
+      <h2>{isShoppingGuide ? 'Planeje sua visita à ReeCell' : 'Precisa de avaliação em Bombinhas?'}</h2>
+      <p>{isShoppingGuide ? 'A loja fica em Bombas, bairro de Bombinhas (SC), e atende moradores e visitantes. Consulte a disponibilidade para o modelo do seu aparelho e confirme as condições de compra antes de sair.' : 'A ReeCell fica no bairro Bombas, em Bombinhas (SC), e atende moradores e visitantes. Informe o modelo e os sintomas para consultar a possibilidade de atendimento. O diagnóstico, o valor e o prazo dependem da avaliação do aparelho.'}</p>
       <ul>{commercialLinks.map(link => <li><a href={link.href}>{link.label}</a></li>)}<li><a href="/contato-reecell-bombinhas/#contato">Endereço, horários e como chegar</a></li></ul>
     </aside>
     {data.cta && <aside class="article-cta" aria-label="Consultar atendimento sobre este assunto"><h2>{data.cta.heading}</h2><p>{data.cta.description}</p><WhatsAppCTA label={data.cta.label} message={data.cta.message} location="article" context={data.slug} /></aside>}

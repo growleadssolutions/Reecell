@@ -20,6 +20,8 @@ const blog = defineCollection({
   },
   schema: ({ image }) => z.object({
     title: z.string().min(1), description: z.string().min(1),
+    seoTitle: z.string().min(1).optional(),
+    editorialAuthor: z.literal('ReeCell').optional(),
     slug: z.string().min(1).refine(value => !/[\s/?#\\]/.test(value) && !['.', '..'].includes(value), 'Use exatamente o segmento da URL original, sem barras.'),
     // Obrigatório e imutável: data extraída da URL WordPress, não da revisão editorial.
     permalinkDate: calendarDate,

@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-26T16:42:14.172Z",
+  "checkedAt": "2026-11-26T18:34:20.037Z",
   "layer": "static-build-and-routing-contract",
   "notDeploymentProof": true,
   "results": [
@@ -472,6 +472,36 @@
       "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
     },
     {
+      "oldPath": "/2026/11/26/onde-comprar-cabo-carregador-em-bombinhas/",
+      "finalPath": "/2026/11/26/onde-comprar-cabo-carregador-em-bombinhas/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/2026/11/26/onde-comprar-capinhas-em-bombinhas/",
+      "finalPath": "/2026/11/26/onde-comprar-capinhas-em-bombinhas/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/2026/11/26/onde-comprar-carregador-em-bombinhas/",
+      "finalPath": "/2026/11/26/onde-comprar-carregador-em-bombinhas/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/2026/11/26/onde-comprar-celular-em-bombinhas/",
+      "finalPath": "/2026/11/26/onde-comprar-celular-em-bombinhas/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/2026/11/26/onde-comprar-pelicula-em-bombinhas/",
+      "finalPath": "/2026/11/26/onde-comprar-pelicula-em-bombinhas/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
       "oldPath": "/2026/10/06/quanto-tempo-demora-consertar-celular/",
       "finalPath": "/2026/10/06/quanto-tempo-demora-consertar-celular/",
       "treatment": "preservada",
@@ -502,10 +532,10 @@
       "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
     }
   ],
-  "images": 123,
-  "internalLinks": 3114,
+  "images": 133,
+  "internalLinks": 3361,
   "contentHashes": 28,
-  "pages": 70,
-  "sitemapUrls": 69,
+  "pages": 75,
+  "sitemapUrls": 74,
   "hostgatorImageDependencies": 0
 }

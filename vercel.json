@@ -4234,6 +4234,196 @@
       "status": 301
     },
     {
+      "src": "^(?:/2026/11/26/onde-comprar-cabo-carregador-em-bombinhas/|/2026/11/26/onde-comprar-cabo-carregador-em-bombinhas|/2026/11/26/onde-comprar-cabo-carregador-em-bombinhas/index\\.html)$",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.reecell.com.br"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/11/26/onde-comprar-cabo-carregador-em-bombinhas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^(?:/2026/11/26/onde-comprar-cabo-carregador-em-bombinhas/|/2026/11/26/onde-comprar-cabo-carregador-em-bombinhas|/2026/11/26/onde-comprar-cabo-carregador-em-bombinhas/index\\.html)$",
+      "has": [
+        {
+          "type": "host",
+          "value": "reecell.com.br"
+        },
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/11/26/onde-comprar-cabo-carregador-em-bombinhas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^(?:/2026/11/26/onde-comprar-cabo-carregador-em-bombinhas|/2026/11/26/onde-comprar-cabo-carregador-em-bombinhas/index\\.html)$",
+      "headers": {
+        "Location": "/2026/11/26/onde-comprar-cabo-carregador-em-bombinhas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^(?:/2026/11/26/onde-comprar-capinhas-em-bombinhas/|/2026/11/26/onde-comprar-capinhas-em-bombinhas|/2026/11/26/onde-comprar-capinhas-em-bombinhas/index\\.html)$",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.reecell.com.br"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/11/26/onde-comprar-capinhas-em-bombinhas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^(?:/2026/11/26/onde-comprar-capinhas-em-bombinhas/|/2026/11/26/onde-comprar-capinhas-em-bombinhas|/2026/11/26/onde-comprar-capinhas-em-bombinhas/index\\.html)$",
+      "has": [
+        {
+          "type": "host",
+          "value": "reecell.com.br"
+        },
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/11/26/onde-comprar-capinhas-em-bombinhas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^(?:/2026/11/26/onde-comprar-capinhas-em-bombinhas|/2026/11/26/onde-comprar-capinhas-em-bombinhas/index\\.html)$",
+      "headers": {
+        "Location": "/2026/11/26/onde-comprar-capinhas-em-bombinhas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^(?:/2026/11/26/onde-comprar-carregador-em-bombinhas/|/2026/11/26/onde-comprar-carregador-em-bombinhas|/2026/11/26/onde-comprar-carregador-em-bombinhas/index\\.html)$",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.reecell.com.br"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/11/26/onde-comprar-carregador-em-bombinhas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^(?:/2026/11/26/onde-comprar-carregador-em-bombinhas/|/2026/11/26/onde-comprar-carregador-em-bombinhas|/2026/11/26/onde-comprar-carregador-em-bombinhas/index\\.html)$",
+      "has": [
+        {
+          "type": "host",
+          "value": "reecell.com.br"
+        },
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/11/26/onde-comprar-carregador-em-bombinhas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^(?:/2026/11/26/onde-comprar-carregador-em-bombinhas|/2026/11/26/onde-comprar-carregador-em-bombinhas/index\\.html)$",
+      "headers": {
+        "Location": "/2026/11/26/onde-comprar-carregador-em-bombinhas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^(?:/2026/11/26/onde-comprar-celular-em-bombinhas/|/2026/11/26/onde-comprar-celular-em-bombinhas|/2026/11/26/onde-comprar-celular-em-bombinhas/index\\.html)$",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.reecell.com.br"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/11/26/onde-comprar-celular-em-bombinhas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^(?:/2026/11/26/onde-comprar-celular-em-bombinhas/|/2026/11/26/onde-comprar-celular-em-bombinhas|/2026/11/26/onde-comprar-celular-em-bombinhas/index\\.html)$",
+      "has": [
+        {
+          "type": "host",
+          "value": "reecell.com.br"
+        },
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/11/26/onde-comprar-celular-em-bombinhas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^(?:/2026/11/26/onde-comprar-celular-em-bombinhas|/2026/11/26/onde-comprar-celular-em-bombinhas/index\\.html)$",
+      "headers": {
+        "Location": "/2026/11/26/onde-comprar-celular-em-bombinhas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^(?:/2026/11/26/onde-comprar-pelicula-em-bombinhas/|/2026/11/26/onde-comprar-pelicula-em-bombinhas|/2026/11/26/onde-comprar-pelicula-em-bombinhas/index\\.html)$",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.reecell.com.br"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/11/26/onde-comprar-pelicula-em-bombinhas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^(?:/2026/11/26/onde-comprar-pelicula-em-bombinhas/|/2026/11/26/onde-comprar-pelicula-em-bombinhas|/2026/11/26/onde-comprar-pelicula-em-bombinhas/index\\.html)$",
+      "has": [
+        {
+          "type": "host",
+          "value": "reecell.com.br"
+        },
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/11/26/onde-comprar-pelicula-em-bombinhas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^(?:/2026/11/26/onde-comprar-pelicula-em-bombinhas|/2026/11/26/onde-comprar-pelicula-em-bombinhas/index\\.html)$",
+      "headers": {
+        "Location": "/2026/11/26/onde-comprar-pelicula-em-bombinhas/"
+      },
+      "status": 301
+    },
+    {
       "src": "^(?:/2026/10/06/quanto-tempo-demora-consertar-celular/|/2026/10/06/quanto-tempo-demora-consertar-celular|/2026/10/06/quanto-tempo-demora-consertar-celular/index\\.html)$",
       "has": [
         {
@@ -4709,6 +4899,26 @@
     {
       "src": "^/2026/10/06/celular-travando-muito/$",
       "dest": "/2026/10/06/celular-travando-muito/index.html"
+    },
+    {
+      "src": "^/2026/11/26/onde-comprar-cabo-carregador-em-bombinhas/$",
+      "dest": "/2026/11/26/onde-comprar-cabo-carregador-em-bombinhas/index.html"
+    },
+    {
+      "src": "^/2026/11/26/onde-comprar-capinhas-em-bombinhas/$",
+      "dest": "/2026/11/26/onde-comprar-capinhas-em-bombinhas/index.html"
+    },
+    {
+      "src": "^/2026/11/26/onde-comprar-carregador-em-bombinhas/$",
+      "dest": "/2026/11/26/onde-comprar-carregador-em-bombinhas/index.html"
+    },
+    {
+      "src": "^/2026/11/26/onde-comprar-celular-em-bombinhas/$",
+      "dest": "/2026/11/26/onde-comprar-celular-em-bombinhas/index.html"
+    },
+    {
+      "src": "^/2026/11/26/onde-comprar-pelicula-em-bombinhas/$",
+      "dest": "/2026/11/26/onde-comprar-pelicula-em-bombinhas/index.html"
     },
     {
       "src": "^/2026/10/06/quanto-tempo-demora-consertar-celular/$",

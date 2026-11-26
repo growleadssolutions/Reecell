@@ -12,7 +12,7 @@ for (const page of priorityPages) {
 }
 const pages = new Map();
 const titles = new Set();
-let authors = 0, localArticleLinks = 0, internalFragmentChecks = 0;
+let authors = 0, editorialOrganizations = 0, localArticleLinks = 0, internalFragmentChecks = 0;
 for (const path of paths) {
   const html = await readFile(`dist${path}index.html`, 'utf8');
   const title = html.match(/<title>(.*?)<\/title>/s)?.[1];
@@ -38,6 +38,13 @@ for (const path of paths) {
     assert.equal(local.areaServed.name, 'Bombinhas');
     const article = graph.find(node => node['@type'] === 'Article');
     if (article?.author) {
+      if (article.author['@type'] === 'Organization') {
+        assert.equal(article.author['@id'], `${origin}/#organization`);
+        assert.equal(article.author.name, 'ReeCell');
+        assert(html.includes('rel="author"'));
+        editorialOrganizations++;
+        continue;
+      }
       assert.equal(article.author.name, 'Gabriel Souza');
       assert(html.includes('rel="author"'));
       assert(!path.startsWith('/2026/10/06/'), 'Não atribuir autoria histórica aos artigos novos');
@@ -66,6 +73,6 @@ for (const [id, destination] of Object.entries(legacyPostIds)) {
 for (const query of ['', 'utm_source=test', 'p=999999', 'p=4310', 'p=invalid']) {
   assert(!matchRoute('/', { searchParams: new URLSearchParams(query) }).location, `Redirect indevido: ${query}`);
 }
-const report = { checkedAt: new Date().toISOString(), layer: 'local-build', deploymentValidated: false, pages: pages.size, priorityURLsAndTitlesPreserved: priorityPages.length, uniqueTitles: titles.size, authors, localArticleLinks, internalFragmentChecks, unreachable, maxClicksFromHome: Math.max(...distance.values()), legacyIds: Object.keys(legacyPostIds).length, failures: [] };
+const report = { checkedAt: new Date().toISOString(), layer: 'local-build', deploymentValidated: false, pages: pages.size, priorityURLsAndTitlesPreserved: priorityPages.length, uniqueTitles: titles.size, authors, editorialOrganizations, localArticleLinks, internalFragmentChecks, unreachable, maxClicksFromHome: Math.max(...distance.values()), legacyIds: Object.keys(legacyPostIds).length, failures: [] };
 await writeFile('docs/otimizacao-2026-11-25/validation.json', JSON.stringify(report, null, 2) + '\n');
 console.log(JSON.stringify(report, null, 2));

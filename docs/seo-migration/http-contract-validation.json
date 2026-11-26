@@ -1,7 +1,7 @@
 {
-  "checkedAt": "2026-11-26T16:42:19.664Z",
+  "checkedAt": "2026-11-26T18:34:39.918Z",
   "layer": "local-contract-http-NOT-Vercel",
-  "base": "http://127.0.0.1:51170",
+  "base": "http://127.0.0.1:49720",
   "deploymentValidated": false,
   "results": [
     {
@@ -1700,6 +1700,111 @@
       "expected": 301,
       "status": 301,
       "location": "/2026/10/06/celular-travando-muito/",
+      "ok": true,
+      "finalStatus": 200,
+      "canonicalOK": true,
+      "noindex": false
+    },
+    {
+      "oldPath": "/2026/11/26/onde-comprar-cabo-carregador-em-bombinhas/",
+      "finalPath": "/2026/11/26/onde-comprar-cabo-carregador-em-bombinhas/",
+      "expected": 200,
+      "status": 200,
+      "location": null,
+      "ok": true,
+      "canonicalOK": true,
+      "noindex": false
+    },
+    {
+      "oldPath": "/2026/11/26/onde-comprar-cabo-carregador-em-bombinhas",
+      "finalPath": "/2026/11/26/onde-comprar-cabo-carregador-em-bombinhas/",
+      "expected": 301,
+      "status": 301,
+      "location": "/2026/11/26/onde-comprar-cabo-carregador-em-bombinhas/",
+      "ok": true,
+      "finalStatus": 200,
+      "canonicalOK": true,
+      "noindex": false
+    },
+    {
+      "oldPath": "/2026/11/26/onde-comprar-capinhas-em-bombinhas/",
+      "finalPath": "/2026/11/26/onde-comprar-capinhas-em-bombinhas/",
+      "expected": 200,
+      "status": 200,
+      "location": null,
+      "ok": true,
+      "canonicalOK": true,
+      "noindex": false
+    },
+    {
+      "oldPath": "/2026/11/26/onde-comprar-capinhas-em-bombinhas",
+      "finalPath": "/2026/11/26/onde-comprar-capinhas-em-bombinhas/",
+      "expected": 301,
+      "status": 301,
+      "location": "/2026/11/26/onde-comprar-capinhas-em-bombinhas/",
+      "ok": true,
+      "finalStatus": 200,
+      "canonicalOK": true,
+      "noindex": false
+    },
+    {
+      "oldPath": "/2026/11/26/onde-comprar-carregador-em-bombinhas/",
+      "finalPath": "/2026/11/26/onde-comprar-carregador-em-bombinhas/",
+      "expected": 200,
+      "status": 200,
+      "location": null,
+      "ok": true,
+      "canonicalOK": true,
+      "noindex": false
+    },
+    {
+      "oldPath": "/2026/11/26/onde-comprar-carregador-em-bombinhas",
+      "finalPath": "/2026/11/26/onde-comprar-carregador-em-bombinhas/",
+      "expected": 301,
+      "status": 301,
+      "location": "/2026/11/26/onde-comprar-carregador-em-bombinhas/",
+      "ok": true,
+      "finalStatus": 200,
+      "canonicalOK": true,
+      "noindex": false
+    },
+    {
+      "oldPath": "/2026/11/26/onde-comprar-celular-em-bombinhas/",
+      "finalPath": "/2026/11/26/onde-comprar-celular-em-bombinhas/",
+      "expected": 200,
+      "status": 200,
+      "location": null,
+      "ok": true,
+      "canonicalOK": true,
+      "noindex": false
+    },
+    {
+      "oldPath": "/2026/11/26/onde-comprar-celular-em-bombinhas",
+      "finalPath": "/2026/11/26/onde-comprar-celular-em-bombinhas/",
+      "expected": 301,
+      "status": 301,
+      "location": "/2026/11/26/onde-comprar-celular-em-bombinhas/",
+      "ok": true,
+      "finalStatus": 200,
+      "canonicalOK": true,
+      "noindex": false
+    },
+    {
+      "oldPath": "/2026/11/26/onde-comprar-pelicula-em-bombinhas/",
+      "finalPath": "/2026/11/26/onde-comprar-pelicula-em-bombinhas/",
+      "expected": 200,
+      "status": 200,
+      "location": null,
+      "ok": true,
+      "canonicalOK": true,
+      "noindex": false
+    },
+    {
+      "oldPath": "/2026/11/26/onde-comprar-pelicula-em-bombinhas",
+      "finalPath": "/2026/11/26/onde-comprar-pelicula-em-bombinhas/",
+      "expected": 301,
+      "status": 301,
+      "location": "/2026/11/26/onde-comprar-pelicula-em-bombinhas/",
       "ok": true,
       "finalStatus": 200,
       "canonicalOK": true,
