@@ -4,6 +4,7 @@ import Footer from '../components/layout/Footer.astro';
 import SeoHead, { type Props as SeoProps } from '../components/seo/SeoHead.astro';
 import StructuredData from '../components/seo/StructuredData.astro';
 import ContactEvents from '../components/conversion/ContactEvents.astro';
+import FloatingWhatsApp from '../components/conversion/FloatingWhatsApp.astro';
 import { servicePages } from '../data/service-pages';
 import { baseGraph, entityIds, absoluteURL, type SchemaNode } from '../lib/structured-data';
 import '../styles/global.css';
@@ -36,5 +37,5 @@ const nodes: SchemaNode[] = [...baseGraph(), { '@type': 'WebPage', '@id': `${url
   <SeoHead {...seo} />{includeStructuredData && <StructuredData nodes={nodes} />}
 </head><body data-page-category={pageCategory} data-service={service?.slug}>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
-  <Header /><main id="conteudo" tabindex="-1"><slot /></main><Footer /><ContactEvents />
+  <Header /><main id="conteudo" tabindex="-1"><slot /></main><Footer /><FloatingWhatsApp /><ContactEvents />
 </body></html>
