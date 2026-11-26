@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-02T14:03:39.844Z",
+  "checkedAt": "2026-11-26T16:42:14.172Z",
   "layer": "static-build-and-routing-contract",
   "notDeploymentProof": true,
   "results": [
@@ -452,12 +452,60 @@
       "finalPath": "/troca-de-tela-de-celular-em-bombinhas/",
       "treatment": "preservada",
       "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/2026/10/06/celular-nao-reconhece-chip/",
+      "finalPath": "/2026/10/06/celular-nao-reconhece-chip/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/2026/10/06/celular-sem-sinal-ou-sem-rede/",
+      "finalPath": "/2026/10/06/celular-sem-sinal-ou-sem-rede/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/2026/10/06/celular-travando-muito/",
+      "finalPath": "/2026/10/06/celular-travando-muito/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/2026/10/06/quanto-tempo-demora-consertar-celular/",
+      "finalPath": "/2026/10/06/quanto-tempo-demora-consertar-celular/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/2026/10/06/tela-do-celular-com-manchas-ou-linhas/",
+      "finalPath": "/2026/10/06/tela-do-celular-com-manchas-ou-linhas/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/2026/10/06/tela-do-celular-piscando/",
+      "finalPath": "/2026/10/06/tela-do-celular-piscando/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/2026/10/06/touch-do-celular-nao-funciona/",
+      "finalPath": "/2026/10/06/touch-do-celular-nao-funciona/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
+    },
+    {
+      "oldPath": "/2026/10/06/vale-a-pena-consertar-celular-antigo/",
+      "finalPath": "/2026/10/06/vale-a-pena-consertar-celular-antigo/",
+      "treatment": "preservada",
+      "result": "HTML final, canonical, indexação e conteúdo do arquivo OK"
     }
   ],
-  "images": 107,
-  "internalLinks": 2361,
+  "images": 123,
+  "internalLinks": 3114,
   "contentHashes": 28,
-  "pages": 62,
-  "sitemapUrls": 61,
+  "pages": 70,
+  "sitemapUrls": 69,
   "hostgatorImageDependencies": 0
 }

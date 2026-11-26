@@ -6,27 +6,52 @@ import Container from '../components/ui/Container.astro';
 import Breadcrumbs from '../components/seo/Breadcrumbs.astro';
 import WhatsAppCTA from '../components/conversion/WhatsAppCTA.astro';
 import { postPath } from '../lib/permalinks';
+import { seoTitles, commercialLinksForArticle } from '../data/editorial';
+import { legacyArchives } from '../lib/legacy-archives';
 import { absoluteURL, breadcrumbNode, entityIds, type BreadcrumbItem, type SchemaNode } from '../lib/structured-data';
-interface Props { post: CollectionEntry<'blog'>; relatedPosts?: CollectionEntry<'blog'>[]; breadcrumbs?: BreadcrumbItem[] }
-const { post, relatedPosts = [], breadcrumbs = [{ name: 'Início', href: '/' }, { name: 'Blog', href: '/blog/' }, { name: post.data.title, href: postPath(post.data) }] } = Astro.props;
+interface Props { post: CollectionEntry<'blog'>; relatedPosts?: CollectionEntry<'blog'>[]; breadcrumbs?: BreadcrumbItem[]; headings?: { depth: number; slug: string; text: string }[] }
+const { post, relatedPosts = [], headings = [], breadcrumbs = [{ name: 'Início', href: '/' }, { name: 'Blog', href: '/blog/' }, { name: post.data.title, href: postPath(post.data) }] } = Astro.props;
 const { data } = post;
 const socialImage = data.image ? await getImage({ src: data.image, width: Math.min(1200, data.image.width), format: 'jpeg', quality: 80 }) : undefined;
 const url = absoluteURL(postPath(data));
+const commercialLinks = commercialLinksForArticle(data.slug, data.category);
+const archives = legacyArchives.filter(archive => archive.kind === 'tag' && archive.memberPaths?.includes(postPath(data)));
+// Autoria comprovada pelo arquivo WordPress; os oito textos novos não herdam essa atribuição.
+const hasVerifiedAuthor = legacyArchives.some(archive => archive.kind === 'author' && archive.memberPaths?.includes(postPath(data)));
 const formatDate = (date: string) => new Intl.DateTimeFormat('pt-BR', { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(`${date}T12:00:00Z`));
 const graph: SchemaNode[] = [breadcrumbNode(breadcrumbs, url), {
   '@type': 'Article', '@id': `${url}#article`, headline: data.title, description: data.description,
   datePublished: data.publishedDate, ...(data.updatedDate && { dateModified: data.updatedDate }),
   mainEntityOfPage: { '@id': `${url}#webpage` }, publisher: { '@id': entityIds.organization },
+  ...(hasVerifiedAuthor && { author: { '@type': 'Person', name: 'Gabriel Souza', url: absoluteURL('/author/gabriel-souza/') } }),
   inLanguage: 'pt-BR', ...(socialImage && { image: absoluteURL(socialImage.src) }),
 }];
 ---
-<BaseLayout title={`${data.title} | ReeCell`} description={data.description} canonical={url} type="article" image={socialImage?.src} imageAlt={data.imageAlt} publishedTime={data.publishedDate} modifiedTime={data.updatedDate} structuredData={graph}>
+<BaseLayout title={seoTitles[data.slug] ?? `${data.title} | ReeCell`} description={data.description} canonical={url} type="article" image={socialImage?.src} imageAlt={data.imageAlt} publishedTime={data.publishedDate} modifiedTime={data.updatedDate} structuredData={graph}>
   <Container><div class="section article"><Breadcrumbs items={breadcrumbs} />
     <article><header><h1>{data.title}</h1><p class="lead">{data.description}</p><p class="article-dates">Publicado em <time datetime={data.publishedDate}>{formatDate(data.publishedDate)}</time>{data.updatedDate && <> · Atualizado em <time datetime={data.updatedDate}>{formatDate(data.updatedDate)}</time></>}</p></header>
+    {hasVerifiedAuthor && <p class="article-dates">Por <a href="/author/gabriel-souza/" rel="author">Gabriel Souza</a></p>}
     {data.image && <Image class="article-cover" src={data.image} alt={data.imageAlt!} widths={[400, 720, 1080].filter(width => width <= data.image!.width)} sizes="(max-width: 48rem) 90vw, 720px" format="webp" loading="eager" />}
+    {headings.filter(heading => heading.depth === 2).length > 2 && <nav class="article-toc" aria-label="Neste artigo"><strong>Neste artigo</strong><ul>{headings.filter(heading => heading.depth === 2).map(heading => <li><a href={`#${heading.slug}`}>{heading.text}</a></li>)}</ul></nav>}
     <div class="article-content"><slot /></div>
+    <aside class="article-local" aria-label="Atendimento local relacionado">
+      <h2>Precisa de avaliação em Bombinhas?</h2>
+      <p>A ReeCell fica no bairro Bombas, em Bombinhas (SC), e atende moradores e visitantes. Informe o modelo e os sintomas para consultar a possibilidade de atendimento. O diagnóstico, o valor e o prazo dependem da avaliação do aparelho.</p>
+      <ul>{commercialLinks.map(link => <li><a href={link.href}>{link.label}</a></li>)}<li><a href="/contato-reecell-bombinhas/#contato">Endereço, horários e como chegar</a></li></ul>
+    </aside>
     {data.cta && <aside class="article-cta" aria-label="Consultar atendimento sobre este assunto"><h2>{data.cta.heading}</h2><p>{data.cta.description}</p><WhatsAppCTA label={data.cta.label} message={data.cta.message} location="article" context={data.slug} /></aside>}
     </article>
+    {archives.length > 0 && <nav class="article-topics" aria-label="Assuntos deste artigo"><h2>Explore os assuntos</h2><ul>{archives.map(archive => <li><a href={archive.oldPath}>{archive.title}</a></li>)}</ul></nav>}
     {relatedPosts.filter(p => !p.data.draft && p.id !== post.id).length > 0 && <aside class="section"><h2>Continue a leitura</h2><ul>{relatedPosts.filter(p => !p.data.draft && p.id !== post.id).map(p => <li><a href={postPath(p.data)}>{p.data.title}</a></li>)}</ul></aside>}
   </div></Container>
 </BaseLayout>
+<style>
+  .article-local { margin-block: 2rem; padding: 1.5rem; border: 1px solid var(--color-border); }
+  .article-local h2, .article-topics h2 { font-size: 1.4rem; }
+  .article-topics { margin-top: 2rem; }
+  .article-topics ul { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; padding-left: 1rem; }
+  .article-topics a { display: inline-block; padding-block: .5rem; }
+  .article-toc { margin-block: 2rem; padding: 1.25rem; background: var(--color-background); }
+  .article-toc ul { padding-left: 1.25rem; margin-bottom: 0; }
+  .article-toc a { display: inline-block; padding-block: .35rem; }
+</style>

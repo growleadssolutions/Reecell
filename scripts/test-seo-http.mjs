@@ -2,7 +2,7 @@ import { createServer } from 'node:http';
 import { readFile, stat, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { migration, matchRoute, origin } from './seo-routing.mjs';
+import { contentEntries, matchRoute, origin, legacyPostIds } from './seo-routing.mjs';
 
 const root = new URL('../', import.meta.url);
 const dist = path.resolve(fileURLToPath(new URL('dist/', root)));
@@ -16,7 +16,7 @@ if (!live) {
   // Servidor de contrato local, não é a Vercel e não substitui o gate remoto.
   server = createServer(async (req, res) => {
     const url = new URL(req.url, 'http://localhost');
-    const rule = matchRoute(url.pathname, { host: req.headers.host?.split(':')[0], protocol: req.headers['x-forwarded-proto'] ?? 'https' });
+    const rule = matchRoute(url.pathname, { host: req.headers.host?.split(':')[0], protocol: req.headers['x-forwarded-proto'] ?? 'https', searchParams: url.searchParams });
     if (rule.location) { res.writeHead(rule.status, { Location: rule.location + url.search }); res.end(); return; }
     let target = path.resolve(dist, '.' + (rule.dest ?? url.pathname));
     if (!target.startsWith(dist + path.sep) && target !== dist) { res.writeHead(400); res.end(); return; }
@@ -64,7 +64,13 @@ async function check(entry, variant = entry.oldPath) {
   if (!result.ok) output.failures.push(result);
 }
 try {
-  for (const entry of migration.entries) {
+  for (const [id, destination] of Object.entries(legacyPostIds)) {
+    const response = await request(`/?p=${id}`);
+    const target = new URL(response.headers.get('location') ?? '/', base);
+    const result = { oldPath: `/?p=${id}`, finalPath: destination, status: response.status, ok: response.status === 301 && target.pathname === destination && target.origin === base };
+    output.results.push(result); if (!result.ok) output.failures.push(result);
+  }
+  for (const entry of contentEntries) {
     await check(entry);
     if (entry.oldPath !== '/' && entry.oldPath.endsWith('/')) await check(entry, entry.oldPath.slice(0,-1));
   }
@@ -77,7 +83,7 @@ try {
   const sitemapResponse = await request('/sitemap.xml');
   const sitemap = await sitemapResponse.text();
   const sitemapPaths = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
-  const expectedPaths = migration.entries.filter(e => e.treatment === 'preservada').map(e => origin + e.finalPath).sort();
+  const expectedPaths = contentEntries.filter(e => e.treatment === 'preservada').map(e => origin + e.finalPath).sort();
   output.sitemapOK = sitemapResponse.status === 200 && JSON.stringify(sitemapPaths.sort()) === JSON.stringify(expectedPaths);
   const robotsResponse = await request('/robots.txt');
   const robots = await robotsResponse.text();

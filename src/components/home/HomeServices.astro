@@ -13,6 +13,7 @@ const cards = [
   { ...homeServices[2], title: 'Não carrega', description: 'Cabo não conecta ou carga fica falhando?', image: charging, alt: 'Conector de carga de celular' },
   { ...homeServices[3], title: 'Celular não liga', description: 'Travou, apagou ou não dá sinal de vida?', image: phone, alt: 'Celular com a tela apagada sobre uma mesa de madeira' },
 ];
+const serviceLinks: Record<string, string> = { tela: '/troca-de-tela-de-celular-em-bombinhas/', bateria: '/troca-de-bateria-de-celular-em-bombinhas/', carga: '/conserto-de-celular-em-bombinhas/', diagnostico: '/conserto-de-celular-em-bombinhas/' };
 ---
 <section id="servicos" class="section home-services" aria-labelledby="services-title">
   <Container>
@@ -28,7 +29,8 @@ const cards = [
           <div class="service-copy">
           <h3>{item.title}</h3>
           <p>{item.description}</p>
-          <WhatsAppCTA label="Ver solução →" message={item.message} variant="text" location="services" context={item.id} />
+          <p><a href={serviceLinks[item.id]}>Entender {item.id === 'tela' ? 'a troca de tela' : item.id === 'bateria' ? 'a troca de bateria' : 'a avaliação do celular'} →</a></p>
+          <WhatsAppCTA label={item.label} message={item.message} variant="text" location="services" context={item.id} />
           </div>
         </article>
       ))}

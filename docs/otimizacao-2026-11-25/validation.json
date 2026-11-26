@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-11-26T16:42:18.074Z",
+  "layer": "local-build",
+  "deploymentValidated": false,
+  "pages": 69,
+  "priorityURLsAndTitlesPreserved": 8,
+  "uniqueTitles": 69,
+  "authors": 23,
+  "localArticleLinks": 31,
+  "internalFragmentChecks": 382,
+  "unreachable": [],
+  "maxClicksFromHome": 3,
+  "legacyIds": 23,
+  "failures": []
+}

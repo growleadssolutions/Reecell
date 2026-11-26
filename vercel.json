@@ -5,6 +5,1271 @@
   "outputDirectory": "dist",
   "routes": [
     {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.reecell.com.br"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^329$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/08/tela-de-celular-bombinhas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "reecell.com.br"
+        },
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^329$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/08/tela-de-celular-bombinhas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^329$"
+        }
+      ],
+      "headers": {
+        "Location": "/2026/06/08/tela-de-celular-bombinhas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.reecell.com.br"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^332$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/08/celular-caiu-na-agua-o-que-fazer/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "reecell.com.br"
+        },
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^332$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/08/celular-caiu-na-agua-o-que-fazer/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^332$"
+        }
+      ],
+      "headers": {
+        "Location": "/2026/06/08/celular-caiu-na-agua-o-que-fazer/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.reecell.com.br"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^337$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/08/troca-de-bateria-de-celular-sinais/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "reecell.com.br"
+        },
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^337$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/08/troca-de-bateria-de-celular-sinais/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^337$"
+        }
+      ],
+      "headers": {
+        "Location": "/2026/06/08/troca-de-bateria-de-celular-sinais/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.reecell.com.br"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^341$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/08/iphone-nao-carrega-causas-solucoes/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "reecell.com.br"
+        },
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^341$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/08/iphone-nao-carrega-causas-solucoes/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^341$"
+        }
+      ],
+      "headers": {
+        "Location": "/2026/06/08/iphone-nao-carrega-causas-solucoes/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.reecell.com.br"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^344$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/08/samsung-com-tela-verde-o-que-pode-ser/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "reecell.com.br"
+        },
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^344$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/08/samsung-com-tela-verde-o-que-pode-ser/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^344$"
+        }
+      ],
+      "headers": {
+        "Location": "/2026/06/08/samsung-com-tela-verde-o-que-pode-ser/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.reecell.com.br"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^349$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/08/celular-desligando-sozinho-bateria-sistema-placa/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "reecell.com.br"
+        },
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^349$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/08/celular-desligando-sozinho-bateria-sistema-placa/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^349$"
+        }
+      ],
+      "headers": {
+        "Location": "/2026/06/08/celular-desligando-sozinho-bateria-sistema-placa/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.reecell.com.br"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^351$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/08/onde-consertar-celular-em-bombinhas-com-seguranca/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "reecell.com.br"
+        },
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^351$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/08/onde-consertar-celular-em-bombinhas-com-seguranca/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^351$"
+        }
+      ],
+      "headers": {
+        "Location": "/2026/06/08/onde-consertar-celular-em-bombinhas-com-seguranca/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.reecell.com.br"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^353$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/08/tela-trincada-do-celular-posso-continuar-usando-ou-devo-trocar/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "reecell.com.br"
+        },
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^353$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/08/tela-trincada-do-celular-posso-continuar-usando-ou-devo-trocar/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^353$"
+        }
+      ],
+      "headers": {
+        "Location": "/2026/06/08/tela-trincada-do-celular-posso-continuar-usando-ou-devo-trocar/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.reecell.com.br"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^358$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/08/celular-nao-liga-principais-causas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "reecell.com.br"
+        },
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^358$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/08/celular-nao-liga-principais-causas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^358$"
+        }
+      ],
+      "headers": {
+        "Location": "/2026/06/08/celular-nao-liga-principais-causas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.reecell.com.br"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^360$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/08/conector-de-carga-com-defeito-sinais/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "reecell.com.br"
+        },
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^360$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/08/conector-de-carga-com-defeito-sinais/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^360$"
+        }
+      ],
+      "headers": {
+        "Location": "/2026/06/08/conector-de-carga-com-defeito-sinais/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.reecell.com.br"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^370$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/15/celular-carregando-lentamente/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "reecell.com.br"
+        },
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^370$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/15/celular-carregando-lentamente/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^370$"
+        }
+      ],
+      "headers": {
+        "Location": "/2026/06/15/celular-carregando-lentamente/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.reecell.com.br"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^373$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/15/iphone-com-tela-quebrada-em-bombinhas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "reecell.com.br"
+        },
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^373$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/15/iphone-com-tela-quebrada-em-bombinhas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^373$"
+        }
+      ],
+      "headers": {
+        "Location": "/2026/06/15/iphone-com-tela-quebrada-em-bombinhas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.reecell.com.br"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^375$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/15/celular-molhou-na-praia/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "reecell.com.br"
+        },
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^375$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/15/celular-molhou-na-praia/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^375$"
+        }
+      ],
+      "headers": {
+        "Location": "/2026/06/15/celular-molhou-na-praia/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.reecell.com.br"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^377$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/16/assistencia-tecnica-para-celular-em-bombinhas-quando-procurar/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "reecell.com.br"
+        },
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^377$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/16/assistencia-tecnica-para-celular-em-bombinhas-quando-procurar/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^377$"
+        }
+      ],
+      "headers": {
+        "Location": "/2026/06/16/assistencia-tecnica-para-celular-em-bombinhas-quando-procurar/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.reecell.com.br"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^379$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/16/celular-esquentando-muito/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "reecell.com.br"
+        },
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^379$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/16/celular-esquentando-muito/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^379$"
+        }
+      ],
+      "headers": {
+        "Location": "/2026/06/16/celular-esquentando-muito/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.reecell.com.br"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^381$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/16/botao-power-ou-volume-parou-de-funcionar/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "reecell.com.br"
+        },
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^381$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/16/botao-power-ou-volume-parou-de-funcionar/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^381$"
+        }
+      ],
+      "headers": {
+        "Location": "/2026/06/16/botao-power-ou-volume-parou-de-funcionar/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.reecell.com.br"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^383$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/16/camera-do-celular-embacada-ou-tremendo/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "reecell.com.br"
+        },
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^383$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/16/camera-do-celular-embacada-ou-tremendo/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^383$"
+        }
+      ],
+      "headers": {
+        "Location": "/2026/06/16/camera-do-celular-embacada-ou-tremendo/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.reecell.com.br"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^385$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/16/alto-falante-ou-microfone-do-celular-nao-funciona/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "reecell.com.br"
+        },
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^385$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/16/alto-falante-ou-microfone-do-celular-nao-funciona/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^385$"
+        }
+      ],
+      "headers": {
+        "Location": "/2026/06/16/alto-falante-ou-microfone-do-celular-nao-funciona/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.reecell.com.br"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^387$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/16/como-proteger-seu-celular-em-bombinhas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "reecell.com.br"
+        },
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^387$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/16/como-proteger-seu-celular-em-bombinhas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^387$"
+        }
+      ],
+      "headers": {
+        "Location": "/2026/06/16/como-proteger-seu-celular-em-bombinhas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.reecell.com.br"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^389$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/16/assistencia-tecnica-de-celular-confiavel-em-bombinhas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "reecell.com.br"
+        },
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^389$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/16/assistencia-tecnica-de-celular-confiavel-em-bombinhas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^389$"
+        }
+      ],
+      "headers": {
+        "Location": "/2026/06/16/assistencia-tecnica-de-celular-confiavel-em-bombinhas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.reecell.com.br"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^391$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/16/assistencia-tecnica-celular-bombinhas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "reecell.com.br"
+        },
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^391$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/06/16/assistencia-tecnica-celular-bombinhas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^391$"
+        }
+      ],
+      "headers": {
+        "Location": "/2026/06/16/assistencia-tecnica-celular-bombinhas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.reecell.com.br"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^427$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/08/04/melhores-lojas-de-celulares-em-bombinhas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "reecell.com.br"
+        },
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^427$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/08/04/melhores-lojas-de-celulares-em-bombinhas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^427$"
+        }
+      ],
+      "headers": {
+        "Location": "/2026/08/04/melhores-lojas-de-celulares-em-bombinhas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.reecell.com.br"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^431$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/08/04/melhores-assistencias-tecnicas-de-celular-em-bombinhas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "reecell.com.br"
+        },
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
+        },
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^431$"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/08/04/melhores-assistencias-tecnicas-de-celular-em-bombinhas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "^431$"
+        }
+      ],
+      "headers": {
+        "Location": "/2026/08/04/melhores-assistencias-tecnicas-de-celular-em-bombinhas/"
+      },
+      "status": 301
+    },
+    {
       "src": "^(?:/author-sitemap\\.xml)$",
       "has": [
         {
@@ -2855,6 +4120,310 @@
       "status": 301
     },
     {
+      "src": "^(?:/2026/10/06/celular-nao-reconhece-chip/|/2026/10/06/celular-nao-reconhece-chip|/2026/10/06/celular-nao-reconhece-chip/index\\.html)$",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.reecell.com.br"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/10/06/celular-nao-reconhece-chip/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^(?:/2026/10/06/celular-nao-reconhece-chip/|/2026/10/06/celular-nao-reconhece-chip|/2026/10/06/celular-nao-reconhece-chip/index\\.html)$",
+      "has": [
+        {
+          "type": "host",
+          "value": "reecell.com.br"
+        },
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/10/06/celular-nao-reconhece-chip/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^(?:/2026/10/06/celular-nao-reconhece-chip|/2026/10/06/celular-nao-reconhece-chip/index\\.html)$",
+      "headers": {
+        "Location": "/2026/10/06/celular-nao-reconhece-chip/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^(?:/2026/10/06/celular-sem-sinal-ou-sem-rede/|/2026/10/06/celular-sem-sinal-ou-sem-rede|/2026/10/06/celular-sem-sinal-ou-sem-rede/index\\.html)$",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.reecell.com.br"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/10/06/celular-sem-sinal-ou-sem-rede/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^(?:/2026/10/06/celular-sem-sinal-ou-sem-rede/|/2026/10/06/celular-sem-sinal-ou-sem-rede|/2026/10/06/celular-sem-sinal-ou-sem-rede/index\\.html)$",
+      "has": [
+        {
+          "type": "host",
+          "value": "reecell.com.br"
+        },
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/10/06/celular-sem-sinal-ou-sem-rede/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^(?:/2026/10/06/celular-sem-sinal-ou-sem-rede|/2026/10/06/celular-sem-sinal-ou-sem-rede/index\\.html)$",
+      "headers": {
+        "Location": "/2026/10/06/celular-sem-sinal-ou-sem-rede/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^(?:/2026/10/06/celular-travando-muito/|/2026/10/06/celular-travando-muito|/2026/10/06/celular-travando-muito/index\\.html)$",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.reecell.com.br"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/10/06/celular-travando-muito/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^(?:/2026/10/06/celular-travando-muito/|/2026/10/06/celular-travando-muito|/2026/10/06/celular-travando-muito/index\\.html)$",
+      "has": [
+        {
+          "type": "host",
+          "value": "reecell.com.br"
+        },
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/10/06/celular-travando-muito/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^(?:/2026/10/06/celular-travando-muito|/2026/10/06/celular-travando-muito/index\\.html)$",
+      "headers": {
+        "Location": "/2026/10/06/celular-travando-muito/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^(?:/2026/10/06/quanto-tempo-demora-consertar-celular/|/2026/10/06/quanto-tempo-demora-consertar-celular|/2026/10/06/quanto-tempo-demora-consertar-celular/index\\.html)$",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.reecell.com.br"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/10/06/quanto-tempo-demora-consertar-celular/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^(?:/2026/10/06/quanto-tempo-demora-consertar-celular/|/2026/10/06/quanto-tempo-demora-consertar-celular|/2026/10/06/quanto-tempo-demora-consertar-celular/index\\.html)$",
+      "has": [
+        {
+          "type": "host",
+          "value": "reecell.com.br"
+        },
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/10/06/quanto-tempo-demora-consertar-celular/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^(?:/2026/10/06/quanto-tempo-demora-consertar-celular|/2026/10/06/quanto-tempo-demora-consertar-celular/index\\.html)$",
+      "headers": {
+        "Location": "/2026/10/06/quanto-tempo-demora-consertar-celular/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^(?:/2026/10/06/tela-do-celular-com-manchas-ou-linhas/|/2026/10/06/tela-do-celular-com-manchas-ou-linhas|/2026/10/06/tela-do-celular-com-manchas-ou-linhas/index\\.html)$",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.reecell.com.br"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/10/06/tela-do-celular-com-manchas-ou-linhas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^(?:/2026/10/06/tela-do-celular-com-manchas-ou-linhas/|/2026/10/06/tela-do-celular-com-manchas-ou-linhas|/2026/10/06/tela-do-celular-com-manchas-ou-linhas/index\\.html)$",
+      "has": [
+        {
+          "type": "host",
+          "value": "reecell.com.br"
+        },
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/10/06/tela-do-celular-com-manchas-ou-linhas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^(?:/2026/10/06/tela-do-celular-com-manchas-ou-linhas|/2026/10/06/tela-do-celular-com-manchas-ou-linhas/index\\.html)$",
+      "headers": {
+        "Location": "/2026/10/06/tela-do-celular-com-manchas-ou-linhas/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^(?:/2026/10/06/tela-do-celular-piscando/|/2026/10/06/tela-do-celular-piscando|/2026/10/06/tela-do-celular-piscando/index\\.html)$",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.reecell.com.br"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/10/06/tela-do-celular-piscando/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^(?:/2026/10/06/tela-do-celular-piscando/|/2026/10/06/tela-do-celular-piscando|/2026/10/06/tela-do-celular-piscando/index\\.html)$",
+      "has": [
+        {
+          "type": "host",
+          "value": "reecell.com.br"
+        },
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/10/06/tela-do-celular-piscando/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^(?:/2026/10/06/tela-do-celular-piscando|/2026/10/06/tela-do-celular-piscando/index\\.html)$",
+      "headers": {
+        "Location": "/2026/10/06/tela-do-celular-piscando/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^(?:/2026/10/06/touch-do-celular-nao-funciona/|/2026/10/06/touch-do-celular-nao-funciona|/2026/10/06/touch-do-celular-nao-funciona/index\\.html)$",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.reecell.com.br"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/10/06/touch-do-celular-nao-funciona/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^(?:/2026/10/06/touch-do-celular-nao-funciona/|/2026/10/06/touch-do-celular-nao-funciona|/2026/10/06/touch-do-celular-nao-funciona/index\\.html)$",
+      "has": [
+        {
+          "type": "host",
+          "value": "reecell.com.br"
+        },
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/10/06/touch-do-celular-nao-funciona/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^(?:/2026/10/06/touch-do-celular-nao-funciona|/2026/10/06/touch-do-celular-nao-funciona/index\\.html)$",
+      "headers": {
+        "Location": "/2026/10/06/touch-do-celular-nao-funciona/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^(?:/2026/10/06/vale-a-pena-consertar-celular-antigo/|/2026/10/06/vale-a-pena-consertar-celular-antigo|/2026/10/06/vale-a-pena-consertar-celular-antigo/index\\.html)$",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.reecell.com.br"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/10/06/vale-a-pena-consertar-celular-antigo/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^(?:/2026/10/06/vale-a-pena-consertar-celular-antigo/|/2026/10/06/vale-a-pena-consertar-celular-antigo|/2026/10/06/vale-a-pena-consertar-celular-antigo/index\\.html)$",
+      "has": [
+        {
+          "type": "host",
+          "value": "reecell.com.br"
+        },
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
+        }
+      ],
+      "headers": {
+        "Location": "https://reecell.com.br/2026/10/06/vale-a-pena-consertar-celular-antigo/"
+      },
+      "status": 301
+    },
+    {
+      "src": "^(?:/2026/10/06/vale-a-pena-consertar-celular-antigo|/2026/10/06/vale-a-pena-consertar-celular-antigo/index\\.html)$",
+      "headers": {
+        "Location": "/2026/10/06/vale-a-pena-consertar-celular-antigo/"
+      },
+      "status": 301
+    },
+    {
       "src": "^/(.*)$",
       "has": [
         {
@@ -3128,6 +4697,38 @@
     {
       "src": "^/troca-de-tela-de-celular-em-bombinhas/$",
       "dest": "/troca-de-tela-de-celular-em-bombinhas/index.html"
+    },
+    {
+      "src": "^/2026/10/06/celular-nao-reconhece-chip/$",
+      "dest": "/2026/10/06/celular-nao-reconhece-chip/index.html"
+    },
+    {
+      "src": "^/2026/10/06/celular-sem-sinal-ou-sem-rede/$",
+      "dest": "/2026/10/06/celular-sem-sinal-ou-sem-rede/index.html"
+    },
+    {
+      "src": "^/2026/10/06/celular-travando-muito/$",
+      "dest": "/2026/10/06/celular-travando-muito/index.html"
+    },
+    {
+      "src": "^/2026/10/06/quanto-tempo-demora-consertar-celular/$",
+      "dest": "/2026/10/06/quanto-tempo-demora-consertar-celular/index.html"
+    },
+    {
+      "src": "^/2026/10/06/tela-do-celular-com-manchas-ou-linhas/$",
+      "dest": "/2026/10/06/tela-do-celular-com-manchas-ou-linhas/index.html"
+    },
+    {
+      "src": "^/2026/10/06/tela-do-celular-piscando/$",
+      "dest": "/2026/10/06/tela-do-celular-piscando/index.html"
+    },
+    {
+      "src": "^/2026/10/06/touch-do-celular-nao-funciona/$",
+      "dest": "/2026/10/06/touch-do-celular-nao-funciona/index.html"
+    },
+    {
+      "src": "^/2026/10/06/vale-a-pena-consertar-celular-antigo/$",
+      "dest": "/2026/10/06/vale-a-pena-consertar-celular-antigo/index.html"
     },
     {
       "src": "^/404(?:.html|/)?$",

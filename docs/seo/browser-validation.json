@@ -1,0 +1,87 @@
+{
+  "checkedAt": "2026-11-25T16:53:35.049Z",
+  "environment": "local built preview, not field CWV",
+  "viewports": [
+    {
+      "path": "/",
+      "width": 320,
+      "overflow": false,
+      "brokenImages": [],
+      "h1": 1,
+      "mainCount": 1,
+      "highPriorityImage": "eager"
+    },
+    {
+      "path": "/conserto-de-celular-em-bombinhas/",
+      "width": 320,
+      "overflow": false,
+      "brokenImages": [],
+      "h1": 1,
+      "mainCount": 1
+    },
+    {
+      "path": "/2026/06/08/celular-desligando-sozinho-bateria-sistema-placa/",
+      "width": 320,
+      "overflow": false,
+      "brokenImages": [],
+      "h1": 1,
+      "mainCount": 1
+    },
+    {
+      "path": "/",
+      "width": 390,
+      "overflow": false,
+      "brokenImages": [],
+      "h1": 1,
+      "mainCount": 1,
+      "highPriorityImage": "eager"
+    },
+    {
+      "path": "/conserto-de-celular-em-bombinhas/",
+      "width": 390,
+      "overflow": false,
+      "brokenImages": [],
+      "h1": 1,
+      "mainCount": 1
+    },
+    {
+      "path": "/2026/06/08/celular-desligando-sozinho-bateria-sistema-placa/",
+      "width": 390,
+      "overflow": false,
+      "brokenImages": [],
+      "h1": 1,
+      "mainCount": 1
+    },
+    {
+      "path": "/",
+      "width": 1440,
+      "overflow": false,
+      "brokenImages": [],
+      "h1": 1,
+      "mainCount": 1,
+      "highPriorityImage": "eager"
+    },
+    {
+      "path": "/conserto-de-celular-em-bombinhas/",
+      "width": 1440,
+      "overflow": false,
+      "brokenImages": [],
+      "h1": 1,
+      "mainCount": 1
+    },
+    {
+      "path": "/2026/06/08/celular-desligando-sozinho-bateria-sistema-placa/",
+      "width": 1440,
+      "overflow": false,
+      "brokenImages": [],
+      "h1": 1,
+      "mainCount": 1
+    }
+  ],
+  "skip": {
+    "text": "Pular para o conteúdo",
+    "top": 16
+  },
+  "skipTarget": "conteudo",
+  "menuOpen": true
+}

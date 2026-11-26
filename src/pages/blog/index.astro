@@ -10,6 +10,8 @@ import battery from '../../assets/home/card-bateria-descarregando.webp';
 import phone from '../../assets/home/card-celular-nao-liga.webp';
 import { getPublishedPosts } from '../../lib/blog';
 import { postPath } from '../../lib/permalinks';
+import { legacyArchives } from '../../lib/legacy-archives';
+import { absoluteURL, breadcrumbNode } from '../../lib/structured-data';
 import '../../styles/home.css';
 import '../../styles/service-pages.css';
 const topics = [
@@ -18,9 +20,10 @@ const topics = [
   { title: 'Quando o celular dá problema', text: 'O aparelho não liga, trava ou apresenta outra falha? Saiba por onde começar a conversa com a assistência, mesmo sem saber a causa do problema.', image: phone, href: '/conserto-de-celular-em-bombinhas/', label: 'Conhecer a avaliação do celular' },
 ];
 const posts = await getPublishedPosts();
+const categories = legacyArchives.filter(archive => archive.kind === 'category' && !archive.oldPath.includes('/page/'));
 const formatDate = (date: string) => new Intl.DateTimeFormat('pt-BR', { dateStyle: 'medium', timeZone: 'UTC' }).format(new Date(`${date}T12:00:00Z`));
 ---
-<BaseLayout title="Blog ReeCell" description="Orientações sobre telas, baterias, carregamento e cuidados com o celular. Leia os artigos da ReeCell em Bombinhas." canonical="/blog/">
+<BaseLayout title="Problemas no celular: cuidados e reparos | Blog ReeCell" description="Orientações sobre telas, baterias, carregamento e cuidados com o celular. Leia os artigos da ReeCell em Bombinhas." canonical="/blog/" structuredData={[breadcrumbNode([{ name: 'Início', href: '/' }, { name: 'Blog', href: '/blog/' }], absoluteURL('/blog/'))]}>
   <div class="home-page detail-page">
   <section class="svc-hero detail-hero" aria-labelledby="blog-title">
     <Container>
@@ -44,6 +47,7 @@ const formatDate = (date: string) => new Intl.DateTimeFormat('pt-BR', { dateStyl
     <article><span class="detail-number">02</span><div><h3>O que ainda funciona?</h3><p>Imagem, toque, som, vibração e carregamento ajudam a descrever o estado do celular. Relate o que você já observou durante o uso.</p></div></article>
     <article><span class="detail-number">03</span><div><h3>O que preciso confirmar?</h3><p>Antes de autorizar um serviço, converse sobre a avaliação, a peça proposta, o valor total, o prazo e as condições de garantia.</p></div></article>
   </div></div><div class="detail-inline-cta"><p>Já tem essas informações?</p><WhatsAppCTA label="Conversar sobre o meu aparelho" location="blog-guidance" /></div></Container></section>
+  <section class="svc-section section"><Container><h2>Arquivos do blog</h2><nav aria-label="Categorias do blog"><ul>{categories.map(category => <li><a href={category.oldPath}>{category.title}</a></li>)}</ul></nav></Container></section>
   <HomeFinalCTA />
   </div>
 </BaseLayout>

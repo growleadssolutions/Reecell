@@ -13,11 +13,27 @@ assert(!htmlFiles.some(f => f.pathname.includes('__teste-')), 'Fixture de migra�
 for (const file of htmlFiles) {
   const html = await readFile(file, 'utf8');
   assert.equal((html.match(/<h1(?:\s|>)/g) ?? []).length, 1, `${file}: H1`);
-  assert.equal((html.match(/rel="canonical"/g) ?? []).length, 1, `${file}: canonical`);
+  assert.equal((html.match(/<link\b[^>]*\brel="canonical"/g) ?? []).length, 1, `${file}: canonical`);
   assert.match(html, /<html lang="pt-BR"/);
   assert.match(html, /name="description" content="[^"]+"/);
   assert.match(html, /https:\/\/reecell\.com\.br/);
-  assert(!/<script(?![^>]*type="application\/ld\+json")/.test(html), 'Nenhum JS de cliente esperado');
+  assert.equal((html.match(/https:\/\/www\.googletagmanager\.com\/gtm\.js\?id=GTM-5WFKFJ6P/g) ?? []).length, 1, `${file}: GTM loader`);
+  assert.match(html, /event: 'gtm\.js'/, `${file}: dataLayer bootstrap`);
+  assert.match(html, /gtag\('js', new Date\(\)\)/, `${file}: gtag bootstrap`);
+  for (const script of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)) {
+    if (script[1].includes('type="application/ld+json"')) continue;
+    const src = script[1].match(/src="([^"]+)"/)?.[1];
+    if (src === 'https://www.googletagmanager.com/gtm.js?id=GTM-5WFKFJ6P') continue;
+    if (!script[1].includes('type="module"')) {
+      assert.match(script[2], /dataLayer|gtag\(/, 'Script inline inesperado');
+      continue;
+    }
+    assert(script[1].includes('type="module"') && (!src || (src.startsWith('/_astro/') && src.endsWith('.js'))), 'Somente módulo local de eventos esperado');
+    const js = src ? await readFile(new URL(src.slice(1), root), 'utf8') : script[2];
+    assert(js.includes('reecell:analytics-consent'), 'Módulo inesperado');
+    assert(Buffer.byteLength(js) < 6000, 'Revisar aumento do bundle de eventos');
+    assert(!/fetch\(|sendBeacon|localStorage|document\.cookie/.test(js), 'Coleta externa/storage não autorizada');
+  }
   for (const match of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
     const graph = JSON.parse(match[1])['@graph'];
     assert(Array.isArray(graph));
@@ -62,4 +78,4 @@ assert.match(sitemap, /<loc>https:\/\/reecell\.com\.br\/<\/loc>/);
 assert.match(await readFile(new URL('robots.txt', root), 'utf8'), /Sitemap: https:\/\/reecell\.com\.br\/sitemap.xml/);
 const fonts = files.filter(f => f.pathname.endsWith('.woff2'));
 assert(fonts.length >= 2, 'As duas fontes precisam existir no build');
-console.log(`Verificação OK: ${htmlFiles.length} páginas, canonical, robots, JSON-LD, links, âncoras e ${fonts.length} fontes locais. Sem JS de cliente.`);
+console.log(`Verificação OK: ${htmlFiles.length} páginas, canonical, robots, JSON-LD, links, âncoras e ${fonts.length} fontes locais. Módulo local de eventos condicionado a consentimento, sem transmissão.`);

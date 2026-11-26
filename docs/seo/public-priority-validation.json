@@ -1,0 +1,78 @@
+{
+  "checkedAt": "2026-11-25T16:51:28.606Z",
+  "environment": "public production before publication of local changes",
+  "priorityPages": [
+    {
+      "path": "/2026/06/08/celular-desligando-sozinho-bateria-sistema-placa/",
+      "status": 200,
+      "xRobotsTag": null,
+      "title": "Celular desligando sozinho: é bateria, sistema ou placa? | ReeCell",
+      "canonical": "https://reecell.com.br/2026/06/08/celular-desligando-sozinho-bateria-sistema-placa/",
+      "robots": "index, follow",
+      "h1": "Celular desligando sozinho: é bateria, sistema ou placa?"
+    },
+    {
+      "path": "/2026/06/08/celular-nao-liga-principais-causas/",
+      "status": 200,
+      "xRobotsTag": null,
+      "title": "Celular não liga: principais causas e quando procurar assistência | ReeCell",
+      "canonical": "https://reecell.com.br/2026/06/08/celular-nao-liga-principais-causas/",
+      "robots": "index, follow",
+      "h1": "Celular não liga: principais causas e quando procurar assistência"
+    },
+    {
+      "path": "/2026/06/08/conector-de-carga-com-defeito-sinais/",
+      "status": 200,
+      "xRobotsTag": null,
+      "title": "Conector de carga com defeito: sinais de que precisa trocar | ReeCell",
+      "canonical": "https://reecell.com.br/2026/06/08/conector-de-carga-com-defeito-sinais/",
+      "robots": "index, follow",
+      "h1": "Conector de carga com defeito: sinais de que precisa trocar"
+    },
+    {
+      "path": "/2026/06/08/tela-trincada-do-celular-posso-continuar-usando-ou-devo-trocar/",
+      "status": 200,
+      "xRobotsTag": null,
+      "title": "Tela trincada do celular: posso continuar usando ou devo trocar? | ReeCell",
+      "canonical": "https://reecell.com.br/2026/06/08/tela-trincada-do-celular-posso-continuar-usando-ou-devo-trocar/",
+      "robots": "index, follow",
+      "h1": "Tela trincada do celular: posso continuar usando ou devo trocar?"
+    },
+    {
+      "path": "/2026/06/16/alto-falante-ou-microfone-do-celular-nao-funciona/",
+      "status": 200,
+      "xRobotsTag": null,
+      "title": "Alto-falante ou Microfone do Celular Não Funciona? | ReeCell",
+      "canonical": "https://reecell.com.br/2026/06/16/alto-falante-ou-microfone-do-celular-nao-funciona/",
+      "robots": "index, follow",
+      "h1": "Alto-falante ou Microfone do Celular Não Funciona?"
+    },
+    {
+      "path": "/2026/06/16/camera-do-celular-embacada-ou-tremendo/",
+      "status": 200,
+      "xRobotsTag": null,
+      "title": "Câmera do Celular Embaçada ou Tremendo: O Que Pode Ser? | ReeCell",
+      "canonical": "https://reecell.com.br/2026/06/16/camera-do-celular-embacada-ou-tremendo/",
+      "robots": "index, follow",
+      "h1": "Câmera do Celular Embaçada ou Tremendo: O Que Pode Ser?"
+    },
+    {
+      "path": "/2026/06/15/celular-carregando-lentamente/",
+      "status": 200,
+      "xRobotsTag": null,
+      "title": "Celular Carregando Lentamente: Carregador ou Aparelho? | ReeCell",
+      "canonical": "https://reecell.com.br/2026/06/15/celular-carregando-lentamente/",
+      "robots": "index, follow",
+      "h1": "Celular Carregando Lentamente: Carregador ou Aparelho?"
+    },
+    {
+      "path": "/2026/08/04/melhores-lojas-de-celulares-em-bombinhas/",
+      "status": 200,
+      "xRobotsTag": null,
+      "title": "Melhores lojas de celulares em Bombinhas | ReeCell",
+      "canonical": "https://reecell.com.br/2026/08/04/melhores-lojas-de-celulares-em-bombinhas/",
+      "robots": "index, follow",
+      "h1": "Melhores lojas de celulares em Bombinhas"
+    }
+  ]
+}

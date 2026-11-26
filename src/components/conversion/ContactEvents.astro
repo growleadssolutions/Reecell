@@ -1,0 +1,41 @@
+---
+// Eventos observáveis no Tag Manager. Sem eventos até receber consentimento.
+---
+<script>
+  const root = document.documentElement;
+  if (!root.hasAttribute('data-contact-events-ready')) {
+    root.setAttribute('data-contact-events-ready', 'true');
+    let consent = false;
+    let serviceViewed = false;
+    const canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    const pagePath = canonical ? new URL(canonical.href).pathname : '/';
+    const service = document.body.dataset.service ?? '';
+    const category = document.body.dataset.pageCategory ?? 'other';
+    const emit = (event: string, parameters: Record<string, string> = {}) => {
+      if (!consent) return;
+      window.dataLayer.push({ event, page_path: pagePath, page_category: category, service_type: service, ...parameters });
+    };
+    window.addEventListener('reecell:analytics-consent', (event) => {
+      consent = (event as CustomEvent<{ granted?: boolean }>).detail?.granted === true;
+      if (consent && service && !serviceViewed) {
+        serviceViewed = true;
+        emit('service_view');
+      }
+    });
+    document.addEventListener('click', (event) => {
+      if (!consent || event.button !== 0 || !(event.target instanceof Element)) return;
+      const link = event.target.closest<HTMLAnchorElement>('a[href]');
+      if (!link) return;
+      const url = new URL(link.href);
+      const type = link.dataset.cta === 'whatsapp' && url.hostname === 'wa.me' ? 'whatsapp'
+        : url.protocol === 'tel:' ? 'phone'
+        : url.hostname === 'www.google.com' && url.pathname.startsWith('/maps/') ? 'directions' : undefined;
+      if (!type) return;
+      emit(`${type}_click`, {
+        contact_type: type,
+        button_position: link.dataset.ctaLocation ?? (link.closest('footer') ? 'footer' : link.closest('#contato') ? 'location' : 'content'),
+        content_context: link.dataset.ctaContext ?? '',
+      });
+    });
+  }
+</script>

@@ -1,0 +1,23 @@
+---
+import Container from '../ui/Container.astro';
+import { getPublishedPosts } from '../../lib/blog';
+import { postPath } from '../../lib/permalinks';
+const selected = ['celular-desligando-sozinho-bateria-sistema-placa', 'celular-nao-liga-principais-causas', 'conector-de-carga-com-defeito-sinais'];
+const posts = await getPublishedPosts();
+const reading = selected.flatMap(slug => posts.filter(post => post.data.slug === slug));
+---
+<section class="section home-reading" aria-labelledby="home-reading-title">
+  <Container>
+    <p class="eyebrow">Orientações sobre seu celular</p>
+    <h2 id="home-reading-title">Entenda os sinais antes de pedir um reparo.</h2>
+    <div class="reading-grid">{reading.map(post => <article><h3><a href={postPath(post.data)}>{post.data.title}</a></h3><p>{post.data.description}</p></article>)}</div>
+    <a href="/blog/">Ver todas as orientações do blog →</a>
+  </Container>
+</section>
+<style>
+  .reading-grid { display: grid; gap: 1.5rem; margin-block: 2rem; }
+  .reading-grid article { min-width: 0; border-top: 1px solid var(--color-border); padding-top: 1.5rem; }
+  .reading-grid h3 { font-size: 1.25rem; line-height: 1.4; }
+  .reading-grid p { color: var(--color-text-muted); }
+  @media (min-width: 64rem) { .reading-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+</style>

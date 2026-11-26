@@ -1,4 +1,4 @@
-import { business } from '../data/business';
+import { business, mapsURL } from '../data/business';
 export type SchemaNode = { '@type': string | string[]; '@id'?: string; [key: string]: unknown };
 export interface BreadcrumbItem { name: string; href: string }
 export const absoluteURL = (path: string) => new URL(path, business.url).href;
@@ -7,6 +7,8 @@ export function baseGraph(): SchemaNode[] {
   return [
     { '@type': 'Organization', '@id': entityIds.organization, name: business.name, url: business.url, ...(business.logo && { logo: absoluteURL(business.logo) }), ...(business.socialLinks.length > 0 && { sameAs: business.socialLinks }) },
     { '@type': 'LocalBusiness', '@id': entityIds.localbusiness, name: business.name, url: business.url, telephone: business.phone,
+      image: absoluteURL('/reecell-fachada.webp'), hasMap: mapsURL,
+      areaServed: { '@type': 'City', name: business.address.city, containedInPlace: { '@type': 'State', name: 'Santa Catarina' } },
       parentOrganization: { '@id': entityIds.organization },
       address: { '@type': 'PostalAddress', streetAddress: `${business.address.street}, ${business.address.neighborhood}`, addressLocality: business.address.city, addressRegion: business.address.state, postalCode: business.address.postalCode, addressCountry: business.address.country },
       ...(business.coordinates && { geo: { '@type': 'GeoCoordinates', ...business.coordinates } }),
@@ -20,5 +22,5 @@ export function breadcrumbNode(items: BreadcrumbItem[], url: string): SchemaNode
 }
 // Somente para serviços descritos na página, com informações verificadas.
 export function serviceNode(name: string, path: string, description: string): SchemaNode {
-  return { '@type': 'Service', '@id': `${absoluteURL(path)}#service`, name, description, url: absoluteURL(path), provider: { '@id': entityIds.localbusiness } };
+  return { '@type': 'Service', '@id': `${absoluteURL(path)}#service`, name, description, url: absoluteURL(path), areaServed: { '@type': 'City', name: business.address.city }, mainEntityOfPage: { '@id': `${absoluteURL(path)}#webpage` }, provider: { '@id': entityIds.localbusiness } };
 }

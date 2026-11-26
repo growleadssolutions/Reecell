@@ -9,6 +9,7 @@ import HomeLocation from '../components/home/HomeLocation.astro';
 import HomeStorefront from '../components/home/HomeStorefront.astro';
 import HomeQuestions from '../components/home/HomeQuestions.astro';
 import HomeFinalCTA from '../components/home/HomeFinalCTA.astro';
+import HomeArticles from '../components/home/HomeArticles.astro';
 import '../styles/home.css';
 ---
 <BaseLayout
@@ -25,6 +26,7 @@ import '../styles/home.css';
     <HomeGuidance />
     <HomeFinalCTA showMap />
     <HomeQuestions />
+    <HomeArticles />
     <HomeLocation showMap={false} />
   </div>
 </BaseLayout>

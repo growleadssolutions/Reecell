@@ -8,6 +8,10 @@ com mapa de 75 URLs, arquivos preservados e regras HTTP 301 em `vercel.json`.
 Vercel é um destino provisório: ainda não houve deploy ou validação da hospedagem.
 Não trocar DNS antes de cumprir os gates do relatório.
 
+**Auditoria SEO e conversão (25/11/2026):** estado consolidado, mapa por página,
+alterações, validações e plano de acompanhamento em [docs/seo/SEO-AUDIT.md](docs/seo/SEO-AUDIT.md).
+As mudanças documentadas são locais; GTM e alterações do site ainda dependem de publicação.
+
 ## Executar no Windows
 
 Node recomendado: 24 LTS (ambiente validado: 24.15.0). npm 11.12.1.

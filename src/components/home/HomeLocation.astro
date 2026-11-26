@@ -4,8 +4,7 @@ interface Props { showMap?: boolean }
 const { showMap = true } = Astro.props;
 import Container from '../ui/Container.astro';
 import WhatsAppCTA from '../conversion/WhatsAppCTA.astro';
-import { business, addressText } from '../../data/business';
-const mapsURL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${business.name}, ${addressText}`)}`;
+import { business, mapsURL } from '../../data/business';
 const displayStreet = business.address.street.replace(' - SI 04', ' – Sala 04');
 ---
 <section id="contato" class="section home-location" aria-labelledby="location-title">

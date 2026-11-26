@@ -14,3 +14,4 @@ export const business = {
   logo: '/reecell-logo.png',
 };
 export const addressText = `${business.address.street} — ${business.address.neighborhood}, ${business.address.city} - ${business.address.state}, ${business.address.postalCode}`;
+export const mapsURL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${business.name}, ${addressText}`)}`;

@@ -20,6 +20,9 @@ import ScreenBudget from '../components/conversion/ScreenBudget.astro';
 import RepairGuidance from '../components/conversion/RepairGuidance.astro';
 import RepairBudget from '../components/conversion/RepairBudget.astro';
 import { serviceGuidance } from '../data/service-guidance';
+import { getPublishedPosts } from '../lib/blog';
+import { postPath } from '../lib/permalinks';
+import { serviceReading } from '../data/editorial';
 interface Props { page: ServicePage }
 const { page } = Astro.props;
 const guide = serviceGuidance[page.image as keyof typeof serviceGuidance];
@@ -29,6 +32,8 @@ const crumbs = [{ name: 'Início', href: '/' }, { name: page.label, href: path }
 const images = { screen, battery, phone };
 const bareHeroImage = page.image === 'phone' || page.image === 'screen';
 const message = `Olá! Gostaria de consultar ${page.label.toLowerCase()}. Meu modelo é: `;
+const published = await getPublishedPosts();
+const reading = (serviceReading[page.slug] ?? []).flatMap(slug => published.filter(post => post.data.slug === slug));
 ---
 <BaseLayout title={`${page.title} | ReeCell`} description={page.description} canonical={path} structuredData={[breadcrumbNode(crumbs, absoluteURL(path)), serviceNode(page.title, path, page.description)]}>
   <div class="home-page detail-page">
@@ -48,5 +53,6 @@ const message = `Olá! Gostaria de consultar ${page.label.toLowerCase()}. Meu mo
   <section class="svc-section section detail-closing"><Container class="detail-closing-grid"><div><p class="eyebrow">Vamos conversar?</p><h2>Conte o que aconteceu com seu celular.</h2><p>Envie o modelo e os sintomas para consultar o atendimento em Bombinhas.</p><WhatsAppCTA label="Pedir orientação pelo WhatsApp" message={message} location="service-final" context={page.slug} /><nav class="detail-related" aria-label="Outros serviços">{servicePages.filter(other => other.slug !== page.slug).map(other => <a href={`/${other.slug}/`}>{other.label} →</a>)}</nav></div><div class="detail-closing-map"><LocationMap /></div></Container></section>
   <section class="svc-section section"><Container><div class="detail-split"><div><p class="eyebrow">Antes de levar o celular</p><h2>Tire suas dúvidas.</h2></div><div class="detail-faq">{questions.map(([question, answer]) => <details><summary>{question}</summary><p>{answer}</p></details>)}</div></div></Container></section>
 <HomeLocation showMap={false} />
+  {reading.length > 0 && <section class="svc-section section"><Container><h2>Entenda os sinais antes de pedir o reparo</h2><div class="detail-cards">{reading.map(post => <article><h3><a href={postPath(post.data)}>{post.data.title}</a></h3><p>{post.data.description}</p></article>)}</div></Container></section>}
 </div>
 </BaseLayout>
